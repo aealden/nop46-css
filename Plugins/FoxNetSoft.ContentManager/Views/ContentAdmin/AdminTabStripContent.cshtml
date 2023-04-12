@@ -1,0 +1,54 @@
+﻿@model FoxNetSoft.Plugin.Misc.ContentManager.Models.Admin.TabContentSearchModel
+@using FoxNetSoft.Plugin.Misc.ContentManager.Models.Admin
+@using Microsoft.AspNetCore.Routing
+@{
+    Layout = "";
+}
+<div class="card-body">
+                        @await Html.PartialAsync("Table", new DataTablesModel
+                    {
+                        Name = "contentmanager-grid",
+                        UrlRead = new DataUrl("AdminTabStripContentList", "ContentAdmin", new RouteValueDictionary { { "entityGroup", Model.EntityGroup }, { "entityId", Model.EntityId } }),
+                        Length = Model.PageSize,
+                        LengthMenu = Model.AvailablePageSizes,
+                        ColumnCollection = new List<ColumnProperty>
+                {
+                    new ColumnProperty(nameof(ContentRecordModel.Published))
+                    {
+                        Title = T("Admin.Catalog.Categories.Fields.Published").Text,
+                        Width = "70",
+                        ClassName = NopColumnClassDefaults.CenterAll,
+                        Render = new RenderBoolean()
+                    },
+                    new ColumnProperty(nameof(ContentRecordModel.Title))
+                    {
+                        Title = T("Admin.FoxNetSoft.Plugin.Misc.ContentManager.Content.Fields.Title").Text
+                    },
+                    new ColumnProperty(nameof(ContentRecordModel.Widget))
+                        {
+                            Title = T("Admin.FoxNetSoft.Plugin.Misc.ContentManager.Content.Fields.Widget").Text,
+        Width = "200",
+        ClassName = NopColumnClassDefaults.CenterAll
+    },
+new ColumnProperty(nameof(ContentRecordModel.DatenStartUtc))
+{
+    Title = T("Admin.FoxNetSoft.Plugin.Misc.ContentManager.Content.Fields.DatenStartUtc").Text,
+    Width = "120",
+    Render = new RenderDate()
+},
+new ColumnProperty(nameof(ContentRecordModel.DatenEndUtc))
+{
+    Title = T("Admin.FoxNetSoft.Plugin.Misc.ContentManager.Content.Fields.DatenEndUtc").Text,
+    Width = "120",
+    Render = new RenderDate()
+},
+new ColumnProperty(nameof(ContentRecordModel.Id))
+{
+    Title = T("Admin.Common.Edit").Text,
+    Width = "100",
+    ClassName =  NopColumnClassDefaults.Button,
+Render = new RenderButtonEdit(new DataUrl("~/Admin/ContentAdmin/Edit/"))
+}
+}
+})
+</div>

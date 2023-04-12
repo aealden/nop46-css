@@ -1,0 +1,124 @@
+@model FoxNetSoft.Plugin.Misc.ContentManager.Models.Admin.ContentRecordModel
+@using FoxNetSoft.Plugin.Misc.ContentManager.Models.Admin
+
+    <div class="cards-group">
+        @if (Model.Id > 0)
+        {
+            if (Model.NumberOfAvailableManufacturers > 0)
+            {
+                <div class="card card-default">
+                    <div class="card-body">
+                        @T("Admin.FoxNetSoft.Plugin.Misc.ContentManager.Manufacturers.Hint")
+                        @await Html.PartialAsync("Table", new DataTablesModel
+                   {
+                       Name = "manufacturers-grid",
+                       UrlRead = new DataUrl("ManufacturerList", "ContentAdmin", new RouteValueDictionary { [nameof(Model.ContentRecordSearchModel.ContentId)] = Model.ContentRecordSearchModel.ContentId }),
+                       UrlDelete = new DataUrl("ManufacturerDelete", "ContentAdmin", null),
+                       Length = Model.ContentRecordSearchModel.PageSize,
+                       LengthMenu = Model.ContentRecordSearchModel.AvailablePageSizes,
+                       ColumnCollection = new List<ColumnProperty>
+    {
+    new ColumnProperty(nameof(ContentManufacturerModel.Published))
+    {
+    Title = T("Admin.Catalog.Manufacturers.Fields.Published").Text,
+    Width = "70",
+    ClassName = NopColumnClassDefaults.CenterAll,
+    Render = new RenderBoolean()
+    },
+    new ColumnProperty(nameof(ContentManufacturerModel.Manufacturer))
+    {
+    Title = T("Admin.Catalog.Manufacturers.Fields.Name").Text
+    },
+    new ColumnProperty(nameof(ContentManufacturerModel.ManufacturerId))
+    {
+    Title = T("Admin.Common.View").Text,
+    Width = "150",
+    ClassName = NopColumnClassDefaults.Button,
+    Render = new RenderButtonView(new DataUrl("~/Admin/Manufacturer/Edit/", nameof(ContentManufacturerModel.ManufacturerId)))
+    },
+    new ColumnProperty(nameof(ContentManufacturerModel.Id))
+    {
+    Title = T("Admin.Common.Delete").Text,
+    Width = "100",
+    Render = new RenderButtonRemove(T("Admin.Common.Delete").Text),
+    ClassName = NopColumnClassDefaults.Button
+    }
+    }
+                   })
+                    </div>
+                </div>
+                <div class="card card-default no-margin">
+                    <div class="card-header">
+                        @T("Admin.Common.AddNewRecord")
+                    </div>
+                    <div class="card-body">
+                        <div class="form-group row">
+                            <div class="col-md-3">
+                                <nop-label asp-for="@Model.AddContentManufacturer.ManufacturerId" />
+                            </div>
+                            <div class="col-md-9">
+                                <nop-select asp-for="@Model.AddContentManufacturer.ManufacturerId" asp-items="@Model.AvailableManufacturers" />
+                                <span asp-validation-for="@Model.AddContentManufacturer.ManufacturerId"></span>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-md-9 col-md-offset-3">
+                                <button type="button" id="addContentManufacturer" class="btn btn-primary">@T("Admin.Common.AddNewRecord")</button>
+                            </div>
+                        </div>
+                    </div>
+                    <script>
+                    $(document).ready(function () {
+                        $('#addContentManufacturer').click(function () {
+                            $('#addContentManufacturer').attr('disabled', true);
+                            var postData = {
+                                ManufacturerId: $("#@Html.IdFor(model => model.AddContentManufacturer.ManufacturerId)").val(),
+                                ContentId: @Model.Id
+                            };
+                            addAntiForgeryToken(postData);
+
+                            $.ajax({
+                                cache: false,
+                                type: "POST",
+                                url: "@Html.Raw(Url.Action("ManufacturerInsert", "ContentAdmin"))",
+                                data: postData,
+                                success: function (data, textStatus, jqXHR) {
+                                    if (data.Result) {
+                                        //reload grid
+                                        updateTable('#manufacturers-grid');
+
+                                        //clear input value
+                                        //$("#@Html.IdFor(model => model.AddContentManufacturer.ManufacturerId)").val('');
+                                    } else {
+                                        //display errors if returned
+                                        display_nop_error(data);
+                                    }
+                                },
+                                complete: function (jqXHR, textStatus) {
+                                    $('#addContentManufacturer').attr('disabled', false);
+                                }
+                            });
+                        });
+                    });
+                    </script>
+                </div>
+            }
+            else
+            {
+                <div class="card card-default">
+                    <div class="card-body">
+                        @T("Admin.FoxNetSoft.Plugin.Misc.ContentManager.Manufacturers.NoManufacturersAvailable")
+                    </div>
+                </div>
+            }
+        }
+        else
+        {
+            <div class="card card-default">
+                <div class="card-body">
+                    @T("Admin.FoxNetSoft.Plugin.Misc.ContentManager.Manufacturers.SaveBeforeEdit")
+                </div>
+            </div>
+        }
+    </div>
+

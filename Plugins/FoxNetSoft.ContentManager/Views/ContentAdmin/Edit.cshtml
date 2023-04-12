@@ -1,0 +1,35 @@
+@model FoxNetSoft.Plugin.Misc.ContentManager.Models.Admin.ContentRecordModel
+@{
+    Layout = "_AdminLayout";
+    //page title
+    //ViewBag.PageTitle = @T("Admin.FoxNetSoft.Plugin.Misc.ContentManager.Content.Edit").Text;
+
+    NopHtml.SetActiveMenuItemSystemName("FoxNetSoft.ContentManager.List");
+}
+    <form asp-controller="ContentAdmin" asp-action="Edit" method="post" id="contentblock-form">
+        <div class="content-header clearfix">
+            <h1 class="float-left">
+                @T("Admin.FoxNetSoft.Plugin.Misc.ContentManager.Content.Edit") - @Model.Title
+                <small>
+                    <i class="fa fa-arrow-circle-left"></i>
+                    <a asp-action="List">@T("Admin.FoxNetSoft.Plugin.Misc.ContentManager.Content.BackToList")</a>
+                </small>
+            </h1>
+            <div class="float-right">
+                <button type="submit" name="save" class="btn bg-blue">
+                    <i class="fa fa-floppy-o"></i>
+                    @T("Admin.Common.Save")
+                </button>
+                <button type="submit" name="save-continue" class="btn bg-blue">
+                    <i class="fa fa-floppy-o"></i>
+                    @T("Admin.Common.SaveContinue")
+                </button>
+                <span id="content-delete" class="btn bg-red">
+                    <i class="fa fa-trash-o"></i>
+                    @T("Admin.Common.Delete")
+                </span>
+            </div>
+        </div>
+        @await Html.PartialAsync("~/Plugins/FoxNetSoft.ContentManager/Views/ContentAdmin/_CreateOrUpdate.cshtml", Model)
+    </form>
+<nop-delete-confirmation asp-model-id="@Model.Id" asp-button-id="content-delete" />

@@ -1,0 +1,7 @@
+﻿.fns-content-list .fns-content-item {background:none repeat scroll 0 0 #FFF;border:1px solid #eee;border-radius:4px;-o-border-radius:4px;-icab-border-radius:4px;-khtml-border-radius:4px;-moz-border-radius:4px;-webkit-border-radius:4px;-moz-border-radius:4px;}
+.fns-content-list {width:auto;margin:0 auto;padding:0;list-style-type:none;}
+.fns-content-list .fns-content-box{text-align:left;clear:both;position:relative;margin-bottom:10px;}
+.fns-content-list .fns-content-box:hover{background:#F9F9F9;}
+.fns-content-list .fns-content-item{width:auto;margin-top:10px;position:relative;zoom:1;}
+.fns-content-list .fns-content-item:after{content:".";clear:both;height:0;font-size:0;line-height:0;visibility:hidden;}
+.fns-content-list .fns-content-item .description{padding:0 0 0 5px;text-align:left;color:#555;}

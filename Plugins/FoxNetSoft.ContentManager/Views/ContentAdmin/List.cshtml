@@ -1,0 +1,111 @@
+@model FoxNetSoft.Plugin.Misc.ContentManager.Models.Admin.ContentRecordSearchModel
+@using FoxNetSoft.Plugin.Misc.ContentManager.Models.Admin
+@{
+    Layout = "_AdminLayout";
+    //page title
+    ViewBag.PageTitle = @T("Admin.FoxNetSoft.Plugin.Misc.ContentManager.List.Manage").Text;
+
+    NopHtml.SetActiveMenuItemSystemName("FoxNetSoft.ContentManager.List");
+}
+<nop-antiforgery-token />
+<div class="content-header clearfix">
+    <h1 class="float-left">
+        @T("Admin.FoxNetSoft.Plugin.Misc.ContentManager.List.Manage")
+    </h1>
+    <div class="float-right">
+        <a href="@Url.Action("Create")" class="btn bg-blue">
+            <i class="fa fa-plus-square"></i>
+            @T("Admin.Common.AddNew")
+        </a>
+    </div>
+</div>
+<div class="content">
+    <div class="form-horizontal">
+        <div class="cards-group">
+            <div class="card card-default card-search">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group row">
+                                <div class="col-md-4">
+                                    <nop-label asp-for="SearchContentTitle" />
+                                </div>
+                                <div class="col-md-8">
+                                    <nop-editor asp-for="SearchContentTitle" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="text-center col-12">
+                            <button type="button" id="btnSearch" class="btn btn-primary btn-search">
+                                <i class="fas fa-search"></i>
+                                @T("Admin.Common.Search")
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card card-default">
+                <div class="card-body">
+                    @await Html.PartialAsync("Table", new DataTablesModel
+               {
+                   Name = "contentblocks-grid",
+                   UrlRead = new DataUrl("List", "ContentAdmin", null),
+                   SearchButtonId = "btnSearch",
+                   Length = Model.PageSize,
+                   LengthMenu = Model.AvailablePageSizes,
+                   Filters = new List<FilterParameter>
+                        {
+                            new FilterParameter(nameof(Model.SearchContentTitle))
+                        },
+                   ColumnCollection = new List<ColumnProperty>
+                        {
+                            new ColumnProperty(nameof(ContentRecordModel.Published))
+                            {
+                                Title = T("Admin.Catalog.Categories.Fields.Published").Text,
+                                Width = "70",
+                                ClassName = NopColumnClassDefaults.CenterAll,
+                                Render = new RenderBoolean()
+                            },
+                           new ColumnProperty(nameof(ContentRecordModel.DisplayOrder))
+                            {
+                                Title = T("Admin.FoxNetSoft.Plugin.Misc.ContentManager.Content.Fields.DisplayOrder").Text,
+                                Width = "100"
+                            },
+                            new ColumnProperty(nameof(ContentRecordModel.Title))
+                            {
+                                Title = T("Admin.FoxNetSoft.Plugin.Misc.ContentManager.Content.Fields.Title").Text
+                            },
+                            new ColumnProperty(nameof(ContentRecordModel.Widget))
+                                {
+                                    Title = T("Admin.FoxNetSoft.Plugin.Misc.ContentManager.Content.Fields.Widget").Text,
+                                    Width = "200",
+                                    ClassName = NopColumnClassDefaults.CenterAll
+                                },
+                            new ColumnProperty(nameof(ContentRecordModel.DatenStartUtc))
+                            {
+                                Title = T("Admin.FoxNetSoft.Plugin.Misc.ContentManager.Content.Fields.DatenStartUtc").Text,
+                                Width = "120",
+                                Render = new RenderDate()
+                            },
+                            new ColumnProperty(nameof(ContentRecordModel.DatenEndUtc))
+                            {
+                                Title = T("Admin.FoxNetSoft.Plugin.Misc.ContentManager.Content.Fields.DatenEndUtc").Text,
+                                Width = "120",
+                                Render = new RenderDate()
+                            },
+                            new ColumnProperty(nameof(ContentRecordModel.Id))
+                            {
+                                Title = T("Admin.Common.Edit").Text,
+                                Width = "100",
+                                ClassName =  NopColumnClassDefaults.Button,
+                                Render = new RenderButtonEdit(new DataUrl("Edit"))
+                            }
+                        }
+               })
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

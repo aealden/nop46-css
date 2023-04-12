@@ -1,0 +1,230 @@
+﻿<Language Name="English" IsRightToLeft="false">
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Misc.ContentManager.ContentSettings.IsRegisted">
+    <Value>Registered version.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Misc.ContentManager.ContentSettings.IsNoRegisted">
+    <Value>Unregistered version, only 5 blocks of content.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Misc.ContentManager.ContentSettings.IsExpired">
+    <Value>Your license has expired, you should renew the license with a 50% discount.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Misc.ContentManager.ContentSettings.StoreUrl">
+    <Value>Website address (for registration)</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Misc.ContentManager.ContentSettings.StoreUrl.Hint">
+    <Value>Website address (for registration).</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Misc.ContentManager.ContentSettings.showDebugInfo">
+    <Value>Enable Debugging</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Misc.ContentManager.ContentSettings.showDebugInfo.Hint">
+    <Value>Write debugging information into file. In ~/App_Data/ folder.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Misc.ContentManager.ContentSettings.Enabled">
+    <Value>Enable plugin</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Misc.ContentManager.ContentSettings.Enabled.Hint">
+    <Value>Enable plugin.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Misc.ContentManager.ContentSettings.SerialNumber">
+    <Value>Serial number</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Misc.ContentManager.ContentSettings.SerialNumber.Hint">
+    <Value>Serial number.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Misc.ContentManager.ContentSettings.CreateSampleData">
+    <Value>Create sample data</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Misc.ContentManager.List.SearchContentTitle">
+    <Value>Name of block of content</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Misc.ContentManager.List.SearchContentTitle.Hint">
+    <Value>Name of block of content.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Misc.ContentManager.List.Manage">
+    <Value>Manage blocks of content</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Misc.ContentManager.Content.Fields.Title">
+    <Value>Title</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Misc.ContentManager.Content.Fields.Title.Hint">
+    <Value>Title.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Misc.ContentManager.Content.Fields.Title.Required">
+    <Value>Please enter a title</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Misc.ContentManager.Content.Fields.Widget">
+    <Value>Widget</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Misc.ContentManager.Content.Fields.Widget.Hint">
+    <Value>Widget name.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Misc.ContentManager.Content.Fields.Widget.Required">
+    <Value>Please enter a Widget</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Misc.ContentManager.Content.Fields.Body">
+    <Value>Body</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Misc.ContentManager.Content.Fields.Body.Hint">
+    <Value>Body.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Misc.ContentManager.Content.Fields.Published">
+    <Value>Published</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Misc.ContentManager.Content.Fields.Published.Hint">
+    <Value>Published.</Value>
+  </LocaleResource>
+	<LocaleResource Name="Admin.FoxNetSoft.Plugin.Misc.ContentManager.Content.Fields.AclCustomerRoles">
+		<Value>Customer roles</Value>
+	</LocaleResource>
+	<LocaleResource Name="Admin.FoxNetSoft.Plugin.Misc.ContentManager.Content.Fields.AclCustomerRoles.Hint">
+		<Value>Select customer roles for which the popup window will be shown.</Value>
+	</LocaleResource>
+	<LocaleResource Name="Admin.FoxNetSoft.Plugin.Misc.ContentManager.Content.Fields.LimitedToStores">
+    <Value>Limited to stores</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Misc.ContentManager.Content.Fields.LimitedToStores.Hint">
+    <Value>Determines whether the content is available only at certain stores.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Misc.ContentManager.Published">
+    <Value>Published</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Misc.ContentManager.Published.Hint">
+    <Value>Published.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Misc.ContentManager.Content.Fields.DatenStartUtc">
+    <Value>Start date</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Misc.ContentManager.Content.Fields.DatenStartUtc.Hint">
+    <Value>Start of content block displaying in Coordinated Universal Time (UTC).</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Misc.ContentManager.Content.Fields.DatenEndUtc">
+    <Value>End date</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Misc.ContentManager.Content.Fields.DatenEndUtc.Hint">
+    <Value>End of content block displaying in Coordinated Universal Time (UTC).</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Misc.ContentManager.Content.Fields.OnlyForHomePage">
+    <Value>Only for Homepage</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Misc.ContentManager.Content.Fields.OnlyForHomePage.Hint">
+    <Value>Show the content only for Homepage.</Value>
+  </LocaleResource>
+	<LocaleResource Name="Admin.FoxNetSoft.Plugin.Misc.ContentManager.Content.Fields.DisplayOrder">
+		<Value>DisplayOrder</Value>
+	</LocaleResource>
+	<LocaleResource Name="Admin.FoxNetSoft.Plugin.Misc.ContentManager.Content.Fields.DisplayOrder.Hint">
+		<Value>DisplayOrder</Value>
+	</LocaleResource>	
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Misc.ContentManager.ContentProduct.Fields.ProductName">
+    <Value>Product</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Misc.ContentManager.ContentCategory.Fields.CategoryName">
+    <Value>Category</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Misc.ContentManager.ContentManufacturer.Fields.ManufacturerName">
+    <Value>Manufacturer</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Misc.ContentManager.ContentSlug.Fields.Slug">
+    <Value>Search engine friendly page name</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Misc.ContentManager.Content.Added">
+    <Value>New content has been added successfully.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Misc.ContentManager.Content.Updated">
+    <Value>Content has been updated successfully.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Misc.ContentManager.Content.Deleted">
+    <Value>Content has been deleted successfully.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Misc.ContentManager.Content.ActivityLog.Add">
+    <Value>Added content ('{0}')</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Misc.ContentManager.Content.ActivityLog.Edit">
+    <Value>Edited content ('{0}')</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Misc.ContentManager.Content.ActivityLog.Delete">
+    <Value>Deleted content ('{0}')</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Misc.ContentManager.Content.AddNew">
+    <Value>Add new content</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Misc.ContentManager.Content.Edit">
+    <Value>Edit content</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Misc.ContentManager.Content.BackToList">
+    <Value>Back to list of content blocks</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Misc.ContentManager.Tab.Info">
+    <Value>Content Info</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Misc.ContentManager.Tab.Products">
+    <Value>Product mappings</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Misc.ContentManager.Tab.Categories">
+    <Value>Category mappings</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Misc.ContentManager.Tab.Manufacturers">
+    <Value>Manufacturer mappings</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Misc.ContentManager.Tab.Slugs">
+    <Value>Slugs (SEO Urls)</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Misc.ContentManager.Products.SaveBeforeEdit">
+    <Value>You need to save the content before you can add products for this Content page.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Misc.ContentManager.Categories.SaveBeforeEdit">
+    <Value>You need to save the content before you can add categories for this Content page.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Misc.ContentManager.Manufacturers.SaveBeforeEdit">
+    <Value>You need to save the content before you can add manufacturers for this Content page.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Misc.ContentManager.Slugs.SaveBeforeEdit">
+    <Value>You need to save the content before you can add Slugs for this Content page.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Misc.ContentManager.Categories.NoCategoriesAvailable">
+    <Value>No records to display</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Misc.ContentManager.Manufacturers.NoManufacturersAvailable">
+    <Value>No records to display</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Misc.ContentManager.ContentSettings.ClearLogFile">
+    <Value>Clear the log-file</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Misc.ContentManager.ContentSettings.GetLogFile">
+    <Value>Download the log-file</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Misc.ContentManager.Name">
+    <Value>Content Manager</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Misc.ContentManager.Products.Hint">
+    <Value>You can provide list of products and plugin will display 'content block' for selected widgetzone and selected products.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Misc.ContentManager.Categories.Hint">
+    <Value>You can provide list of categories and plugin will display 'content block' for selected widgetzone and selected categories.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Misc.ContentManager.Manufacturers.Hint">
+    <Value>You can provide list of manufacturers and plugin will display 'content block' for selected widgetzone and selected manufacturers.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Misc.ContentManager.Slugs">
+    <Value>Slugs (SEO Urls)</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Misc.ContentManager.Slugs.Hint">
+    <Value>You can provide 'SEO Urls' and plugin will display 'content block' for selected widgetzone and selected 'SEO Urls'.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Misc.ContentManager.ForSubCategory">
+    <Value>For sub categories</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Misc.ContentManager.Menu.Brand">
+    <Value>FoxNetSoft</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Misc.ContentManager.Menu.Name">
+    <Value>Content Manager</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Misc.ContentManager.Menu.List">
+    <Value>List</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Misc.ContentManager.Menu.Configure">
+    <Value>Configure</Value>
+  </LocaleResource>
+</Language>
