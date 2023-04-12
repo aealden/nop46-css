@@ -2,6 +2,6 @@
   "SystemName": "creatico",
   "FriendlyName": "creatico",
   "SupportRTL": true,
-  "PreviewImageUrl": "~/Themes/DefaultClean/preview.jpg",
-  "PreviewText": "The 'DefaultClean' site theme"
+  "PreviewImageUrl": "~/Themes/creatico/preview.jpg",
+  "PreviewText": "creatico theme"
 }

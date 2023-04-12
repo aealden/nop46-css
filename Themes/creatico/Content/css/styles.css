@@ -1,5 +1,6 @@
 
 
+
 /*********** CSS RESET **********/
 
 
@@ -155,7 +156,7 @@ label, label + * {
 .master-wrapper-content {
   position: relative;
   z-index: 0;
-  width: 90%;
+  width: 100%;
   margin: 0 auto;
 }
 
@@ -6992,7 +6993,7 @@ label, label + * {
 
 
   .master-wrapper-content {
-    width: 94%;
+    width: 100%;
   }
 
   .home-page-polls li {
@@ -7689,7 +7690,7 @@ label, label + * {
 
 
   .master-wrapper-content {
-    width: 980px;
+    width:100%;
     margin: auto;
   }
 
@@ -8816,3 +8817,6 @@ label, label + * {
   padding: 5px;
   background-color: #4ab2f1;
 }
+
+
+  /* Creatico Custom CSS */
