@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<SupportedWidgetZones>
+  <WidgetZone>header_after</WidgetZone>
+  <WidgetZone>header_middle</WidgetZone>
+  <WidgetZone>header_before</WidgetZone>
+  <WidgetZone>header_selectors</WidgetZone>
+  <WidgetZone>content_after</WidgetZone>
+  <WidgetZone>main_column_before</WidgetZone>
+  <WidgetZone>main_column_after</WidgetZone>
+  <WidgetZone>left_side_column_before</WidgetZone>
+  <WidgetZone>left_side_column_after</WidgetZone>
+  <WidgetZone>right_side_column_before</WidgetZone>
+  <WidgetZone>right_side_column_after</WidgetZone>
+  <WidgetZone>categorydetails_top</WidgetZone>
+  <WidgetZone>categorydetails_after_breadcrumb</WidgetZone>
+  <WidgetZone>categorydetails_before_subcategories</WidgetZone>
+  <WidgetZone>categorydetails_before_featured_products</WidgetZone>
+  <WidgetZone>categorydetails_after_featured_products</WidgetZone>
+  <WidgetZone>categorydetails_before_filters</WidgetZone>
+  <WidgetZone>categorydetails_before_product_list</WidgetZone>
+  <WidgetZone>categorydetails_bottom</WidgetZone>
+  <WidgetZone>productdetails_top</WidgetZone>
+  <WidgetZone>productdetails_bottom</WidgetZone>
+  <WidgetZone>productdetails_before_pictures</WidgetZone>
+  <WidgetZone>productdetails_after_pictures</WidgetZone>
+  <WidgetZone>productdetails_overview_top</WidgetZone>
+  <WidgetZone>productdetails_overview_bottom</WidgetZone>
+  <WidgetZone>productdetails_essential_top</WidgetZone>
+  <WidgetZone>productdetails_essential_bottom</WidgetZone>
+  <WidgetZone>article_top</WidgetZone>
+  <WidgetZone>article_bottom</WidgetZone>
+  <WidgetZone>cmspage_top</WidgetZone>
+  <WidgetZone>cmspage_bottom</WidgetZone>
+  <WidgetZone>blogpost_page_before_body</WidgetZone>
+  <WidgetZone>blogpost_page_before_comments</WidgetZone>
+  <WidgetZone>blogpost_page_inside_comment</WidgetZone>
+  <WidgetZone>blogpost_page_after_comments</WidgetZone>
+  <WidgetZone>bloglist_page_before_posts</WidgetZone>
+  <WidgetZone>bloglist_page_inside_post</WidgetZone>
+  <WidgetZone>bloglist_page_after_posts</WidgetZone>
+  <WidgetZone>home_page_top</WidgetZone>
+  <WidgetZone>home_page_bottom</WidgetZone>
+  <WidgetZone>footer</WidgetZone>
+  <WidgetZone>account_navigation_before</WidgetZone>
+  <WidgetZone>account_navigation_after</WidgetZone>
+  <WidgetZone>body_start_html_tag_after</WidgetZone>
+  <WidgetZone>body_end_html_tag_before</WidgetZone>
+</SupportedWidgetZones>
+

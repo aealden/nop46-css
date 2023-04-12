@@ -1,0 +1,22 @@
+@model FoxNetSoft.Plugin.Misc.ContentManager.Models.Admin.ContentRecordModel
+
+<div asp-validation-summary="All"></div>
+<input asp-for="Id" type="hidden" />
+
+<div class="content">
+    <div class="form-horizontal">
+        <div class="row">
+            <div class="col-md-12 clearfix">
+                <div class="float-left">
+                </div>
+            </div>
+        </div>
+        <nop-tabs id="contentblock-edit">
+            <nop-tab asp-name="tab-info" asp-title="@T("Admin.FoxNetSoft.Plugin.Misc.ContentManager.Tab.Info")" asp-default="true">@await Html.PartialAsync("~/Plugins/FoxNetSoft.ContentManager/Views/ContentAdmin/_CreateOrUpdate.Info.cshtml", Model)</nop-tab>
+            <nop-tab asp-name="tab-products" asp-title="@T("Admin.FoxNetSoft.Plugin.Misc.ContentManager.Tab.Products")">@await Html.PartialAsync("~/Plugins/FoxNetSoft.ContentManager/Views/ContentAdmin/_CreateOrUpdate.Products.cshtml", Model)</nop-tab>
+            <nop-tab asp-name="tab-categories" asp-title="@T("Admin.FoxNetSoft.Plugin.Misc.ContentManager.Tab.Categories")">@await Html.PartialAsync("~/Plugins/FoxNetSoft.ContentManager/Views/ContentAdmin/_CreateOrUpdate.Categories.cshtml", Model)</nop-tab>
+            <nop-tab asp-name="tab-manufacturers" asp-title="@T("Admin.FoxNetSoft.Plugin.Misc.ContentManager.Tab.Manufacturers")">@await Html.PartialAsync("~/Plugins/FoxNetSoft.ContentManager/Views/ContentAdmin/_CreateOrUpdate.Manufacturers.cshtml", Model)</nop-tab>
+            <nop-tab asp-name="tab-slugs" asp-title="@T("Admin.FoxNetSoft.Plugin.Misc.ContentManager.Tab.Slugs")">@await Html.PartialAsync("~/Plugins/FoxNetSoft.ContentManager/Views/ContentAdmin/_CreateOrUpdate.Slugs.cshtml", Model)</nop-tab>
+        </nop-tabs>
+    </div>
+</div>

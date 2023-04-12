@@ -1,0 +1,22 @@
+﻿@model IList<FoxNetSoft.Plugin.Misc.ContentManager.Models.ContentBlockModel>
+@inject IWorkContext workContext
+@using Nop.Web.Framework.UI
+@using Nop.Core
+@inject INopHtmlHelper NopHtml
+@{
+    NopHtml.AddCssFileParts("~/Plugins/FoxNetSoft.ContentManager/Styles/styles.css");
+}
+<div class="fns-content-page">
+    <div class="fns-content-list">
+        @foreach (var item in Model)
+        {
+            <div class="fns-content-box">
+                <div class="fns-content-item" data-fns-content-block-id="@item.Id">
+                    <div class="description">
+                        @Html.Raw(item.Body)
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>

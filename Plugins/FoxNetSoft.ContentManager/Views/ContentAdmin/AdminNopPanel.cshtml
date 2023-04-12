@@ -1,0 +1,7 @@
+@model FoxNetSoft.Plugin.Misc.ContentManager.Models.Admin.TabContentSearchModel
+@{
+    const string hideFeedManagerBlockName = "ProductPage.ContentManager";
+    var hideFeedManagerBlock = await genericAttributeService.GetAttributeAsync<bool>(await workContext.GetCurrentCustomerAsync(), hideFeedManagerBlockName);
+}
+<nop-card asp-name="contentmanager" asp-icon="fa fa-download" asp-title="@T("Admin.FoxNetSoft.Plugin.Misc.ContentManager.Name")" asp-hide-block-attribute-name="@hideFeedManagerBlockName" asp-hide="@hideFeedManagerBlock" asp-advanced="true">@await Html.PartialAsync("~/Plugins/FoxNetSoft.ContentManager/Views/ContentAdmin/AdminTabStripContent.cshtml", Model)</nop-card>
+

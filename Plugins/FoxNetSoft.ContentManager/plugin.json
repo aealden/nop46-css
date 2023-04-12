@@ -1,0 +1,11 @@
+﻿{
+  "Group": "Misc",
+  "FriendlyName": "Content Manager",
+  "SystemName": "FoxNetSoft.Plugin.Misc.ContentManager",
+  "Version": "1.07",
+  "SupportedVersions": [ "4.60" ],
+  "Author": "FoxNetSoft",
+  "DisplayOrder": 1,
+  "FileName": "FoxNetSoft.Plugin.Misc.ContentManager.dll",
+  "Description": "Add advertisement, Youtube, images, etc. on pages."
+}
