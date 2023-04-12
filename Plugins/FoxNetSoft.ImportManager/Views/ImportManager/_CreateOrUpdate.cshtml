@@ -1,0 +1,21 @@
+@model FoxNetSoft.Plugin.Feed.ImportManager.Models.ImportTemplateModel
+<div asp-validation-summary="ModelOnly"></div>
+<input asp-for="Id" type="hidden" />
+
+<div class="content">
+    <div class="form-horizontal">
+        <div class="row">
+            <div class="col-md-12 clearfix">
+                <div class="float-left">
+                </div>
+            </div>
+        </div>
+        <nop-tabs id="importmanager-edit">
+            <nop-tab asp-name="tab-main" asp-title="@T("Admin.FoxNetSoft.Plugin.Feed.ImportManager.ImportReport.Tab.Main")" asp-default="true">@await Html.PartialAsync("~/Plugins/FoxNetSoft.ImportManager/Views/ImportManager/_CreateOrUpdate.Main.cshtml", Model)</nop-tab>
+            <nop-tab asp-name="tab-importsettings" asp-title="@T("Admin.FoxNetSoft.Plugin.Feed.ImportManager.ImportReport.Tab.ImportSettings")">@await Html.PartialAsync("~/Plugins/FoxNetSoft.ImportManager/Views/ImportManager/_CreateOrUpdate.ImportSettings.cshtml", Model)</nop-tab>
+            <nop-tab asp-name="tab-columnmapping" asp-title="@T("Admin.FoxNetSoft.Plugin.Feed.ImportManager.ImportReport.Tab.ColumnMapping")">@await Html.PartialAsync("~/Plugins/FoxNetSoft.ImportManager/Views/ImportManager/_CreateOrUpdate.ColumnMapping.cshtml", Model)</nop-tab>
+            <nop-tab asp-name="tab-shedulesettings" asp-title="@T("Admin.FoxNetSoft.Plugin.Feed.ImportManager.ImportReport.Tab.Shedule")">@await Html.PartialAsync("~/Plugins/FoxNetSoft.ImportManager/Views/ImportManager/_CreateOrUpdate.SheduleSettings.cshtml", Model)</nop-tab>
+            <nop-tab asp-name="tab-reports" asp-title="@T("Admin.FoxNetSoft.Plugin.Feed.ImportManager.ImportReport.Tab.Reports")">@await Html.PartialAsync("~/Plugins/FoxNetSoft.ImportManager/Views/ImportManager/_CreateOrUpdate.Reports.cshtml", Model)</nop-tab>
+        </nop-tabs>
+    </div>
+</div>

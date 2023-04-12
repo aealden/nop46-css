@@ -1,0 +1,873 @@
+﻿<Language Name="English" IsRightToLeft="false">
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Feed.ImportManager.Settings.IsRegisted">
+    <Value>Registered version.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Feed.ImportManager.Settings.IsNoRegisted">
+    <Value>Unregistered version is fully operational. Only 50 items will be inserted and trial period 15 days.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Feed.ImportManager.Settings.IsExpired">
+    <Value>Your license has expired, you should renew the license with a 50% discount.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Feed.ImportManager.Settings.StoreUrl">
+    <Value>Website address (for registration)</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Feed.ImportManager.Settings.StoreUrl.Hint">
+    <Value>Website address (for registration).</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Feed.ImportManager.Settings.showDebugInfo">
+    <Value>Enable Debugging</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Feed.ImportManager.Settings.showDebugInfo.Hint">
+    <Value>Write debugging information into file. In ~/App_Data/ folder.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Feed.ImportManager.Settings.SerialNumber">
+    <Value>Serial number</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Feed.ImportManager.Settings.SerialNumber.Hint">
+    <Value>Serial number.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Feed.ImportManager.Settings.UseSQLServer2014">
+    <Value>Use SQL Server 2014 and older (limit 8000 bytes)</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Feed.ImportManager.Settings.UseSQLServer2014.Hint">
+    <Value>Use SQL Server 2014 and older. Old SQL Servers has limitation 8000 for method 'HASHBYTES'.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Feed.ImportManager.Settings.UseLoadBalancer">
+    <Value>Use Load Balancer (remove https)</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Feed.ImportManager.Settings.UseLoadBalancer.Hint">
+    <Value>Enable it if nopcommerce uses Load Balancer without https, this parameter removes https from the store URL.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Feed.ImportManager.ClearLogFile">
+    <Value>Clear the log-file</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Feed.ImportManager.GetLogFile">
+    <Value>Download the log-file</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Feed.ImportManager.List.Manage">
+    <Value>Manage templates for import</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Feed.ImportManager.List.ImportFileType">
+    <Value>Format</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Feed.ImportManager.List.ImportFileType.Hint">
+    <Value>Select the format of import template (CSV, TXT, XLS, etc.).</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Feed.ImportManager.List.EntityType">
+    <Value>Entity</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Feed.ImportManager.List.EntityType.Hint">
+    <Value>Select the type of entities template (Product, Category, Manufacturer, etc.).</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Feed.ImportManager.ImportTemplate.List.Name">
+    <Value>Name</Value>
+  </LocaleResource>
+	<LocaleResource Name="Admin.FoxNetSoft.Plugin.Feed.ImportManager.ImportTemplate.List.EnableScheduler">
+		<Value>Scheduler</Value>
+	</LocaleResource>
+	<LocaleResource Name="Admin.FoxNetSoft.Plugin.Feed.ImportManager.ImportTemplate.Added">
+    <Value>The new import template has been added successfully.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Feed.ImportManager.ImportTemplate.Updated">
+    <Value>The import template has been updated successfully.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Feed.ImportManager.ImportTemplate.Deleted">
+    <Value>The import template has been deleted successfully.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Feed.ImportManager.ImportTemplate.ActivityLog.Add">
+    <Value>Added import template ('{0}')</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Feed.ImportManager.ImportTemplate.ActivityLog.Edit">
+    <Value>Edited import template ('{0}')</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Feed.ImportManager.ImportTemplate.ActivityLog.Delete">
+    <Value>Deleted import template ('{0}')</Value>
+  </LocaleResource>
+  <LocaleResource Name="enums.FoxNetSoft.Plugin.Feed.ImportManager.Domain.EntityType.Product">
+    <Value>Product</Value>
+  </LocaleResource>
+  <LocaleResource Name="enums.FoxNetSoft.Plugin.Feed.ImportManager.Domain.EntityType.Category">
+    <Value>Category</Value>
+  </LocaleResource>
+  <LocaleResource Name="enums.FoxNetSoft.Plugin.Feed.ImportManager.Domain.EntityType.Manufacturer">
+    <Value>Manufacturer</Value>
+  </LocaleResource>
+  <LocaleResource Name="enums.FoxNetSoft.Plugin.Feed.ImportManager.Domain.EntityType.ProductPicture">
+    <Value>Product Picture</Value>
+  </LocaleResource>
+  <LocaleResource Name="enums.FoxNetSoft.Plugin.Feed.ImportManager.Domain.EntityType.ProductVideo">
+    <Value>Product Video</Value>
+  </LocaleResource>
+	<LocaleResource Name="enums.FoxNetSoft.Plugin.Feed.ImportManager.Domain.EntityType.TierPrice">
+    <Value>Tier Price</Value>
+  </LocaleResource>
+  <LocaleResource Name="enums.FoxNetSoft.Plugin.Feed.ImportManager.Domain.EntityType.ProductCategory">
+    <Value>Product Category mapping</Value>
+  </LocaleResource>
+  <LocaleResource Name="enums.FoxNetSoft.Plugin.Feed.ImportManager.Domain.EntityType.ProductManufacturer">
+    <Value>Product Manufacturer mapping</Value>
+  </LocaleResource>
+  <LocaleResource Name="enums.FoxNetSoft.Plugin.Feed.ImportManager.Domain.EntityType.ProductAttributeCombination">
+    <Value>Product Attribute Combination</Value>
+  </LocaleResource>
+  <LocaleResource Name="enums.FoxNetSoft.Plugin.Feed.ImportManager.Domain.EntityType.ProductSpecification">
+    <Value>Product Specification Attribute</Value>
+  </LocaleResource>
+  <LocaleResource Name="enums.FoxNetSoft.Plugin.Feed.ImportManager.Domain.EntityType.ProductAttributeValue">
+    <Value>Product Attribute Value</Value>
+  </LocaleResource>
+  <LocaleResource Name="enums.FoxNetSoft.Plugin.Feed.ImportManager.Domain.EntityType.ProductAttributeMapping">
+    <Value>Product Attribute Mapping</Value>
+  </LocaleResource>
+  <LocaleResource Name="enums.FoxNetSoft.Plugin.Feed.ImportManager.Domain.EntityType.LocalizedProduct">
+    <Value>Localized values - Product</Value>
+  </LocaleResource>
+  <LocaleResource Name="enums.FoxNetSoft.Plugin.Feed.ImportManager.Domain.EntityType.LocalizedCategory">
+    <Value>Localized values - Category</Value>
+  </LocaleResource>
+  <LocaleResource Name="enums.FoxNetSoft.Plugin.Feed.ImportManager.Domain.EntityType.LocalizedManufacturer">
+    <Value>Localized values - Manufacturer</Value>
+  </LocaleResource>
+	<LocaleResource Name="enums.FoxNetSoft.Plugin.Feed.ImportManager.Domain.EntityType.ProductAttribute">
+		<Value>Product Attribute</Value>
+	</LocaleResource>
+	<LocaleResource Name="enums.FoxNetSoft.Plugin.Feed.ImportManager.Domain.EntityType.LocalizedProductAttribute">
+		<Value>Localized values - Product Attribute</Value>
+	</LocaleResource>
+	<LocaleResource Name="enums.FoxNetSoft.Plugin.Feed.ImportManager.Domain.EntityType.LocalizedProductAttributeValue">
+		<Value>Localized values - Product Attribute Value</Value>
+	</LocaleResource>
+	<LocaleResource Name="enums.FoxNetSoft.Plugin.Feed.ImportManager.Domain.EntityType.SpecificationAttribute">
+    <Value>Specification Attribute</Value>
+  </LocaleResource>
+  <LocaleResource Name="enums.FoxNetSoft.Plugin.Feed.ImportManager.Domain.EntityType.SpecificationAttributeOption">
+    <Value>Specification Attribute Option</Value>
+  </LocaleResource>
+  <LocaleResource Name="enums.FoxNetSoft.Plugin.Feed.ImportManager.Domain.EntityType.LocalizedSpecificationAttribute">
+    <Value>Localized values - Specification Attribute</Value>
+  </LocaleResource>
+  <LocaleResource Name="enums.FoxNetSoft.Plugin.Feed.ImportManager.Domain.EntityType.LocalizedSpecificationAttributeOption">
+    <Value>Localized values -  Specification Attribute Option</Value>
+  </LocaleResource>
+  <LocaleResource Name="enums.FoxNetSoft.Plugin.Feed.ImportManager.Domain.EntityType.ProductTag">
+    <Value>Product Tag</Value>
+  </LocaleResource>
+  <LocaleResource Name="enums.FoxNetSoft.Plugin.Feed.ImportManager.Domain.EntityType.StoreMappingProduct">
+    <Value>StoreMapping - Product</Value>
+  </LocaleResource>
+  <LocaleResource Name="enums.FoxNetSoft.Plugin.Feed.ImportManager.Domain.EntityType.StoreMappingCategory">
+    <Value>StoreMapping - Category</Value>
+  </LocaleResource>
+  <LocaleResource Name="enums.FoxNetSoft.Plugin.Feed.ImportManager.Domain.EntityType.StoreMappingManufacturer">
+    <Value>StoreMapping -  Manufacturer</Value>
+  </LocaleResource>
+  <LocaleResource Name="enums.FoxNetSoft.Plugin.Feed.ImportManager.Domain.EntityType.AclMappingProduct">
+    <Value>AclMapping - Product</Value>
+  </LocaleResource>
+  <LocaleResource Name="enums.FoxNetSoft.Plugin.Feed.ImportManager.Domain.EntityType.AclMappingCategory">
+    <Value>AclMapping - Category</Value>
+  </LocaleResource>
+  <LocaleResource Name="enums.FoxNetSoft.Plugin.Feed.ImportManager.Domain.EntityType.AclMappingManufacturer">
+    <Value>AclMapping -  Manufacturer</Value>
+  </LocaleResource>
+	<LocaleResource Name="enums.FoxNetSoft.Plugin.Feed.ImportManager.Domain.EntityType.RelatedProduct">
+		<Value>Related product</Value>
+	</LocaleResource>
+	<LocaleResource Name="enums.FoxNetSoft.Plugin.Feed.ImportManager.Domain.EntityType.CrossSellProduct">
+		<Value>Cross-sell product</Value>
+	</LocaleResource>
+	<LocaleResource Name="enums.FoxNetSoft.Plugin.Feed.ImportManager.Domain.ImportFileType.CSV">
+    <Value>CSV</Value>
+  </LocaleResource>
+  <LocaleResource Name="enums.FoxNetSoft.Plugin.Feed.ImportManager.Domain.ImportFileType.XML">
+    <Value>XML</Value>
+  </LocaleResource>
+  <LocaleResource Name="enums.FoxNetSoft.Plugin.Feed.ImportManager.Domain.ImportFileType.XLSX">
+    <Value>XLSX</Value>
+  </LocaleResource>
+  <LocaleResource Name="enums.FoxNetSoft.Plugin.Feed.ImportManager.Domain.ImportFileType.TXT">
+    <Value>TXT</Value>
+  </LocaleResource>
+  <LocaleResource Name="enums.FoxNetSoft.Plugin.Feed.ImportManager.Domain.ProductKey.Id">
+    <Value>Id</Value>
+  </LocaleResource>
+  <LocaleResource Name="enums.FoxNetSoft.Plugin.Feed.ImportManager.Domain.ProductKey.Sku">
+    <Value>Sku</Value>
+  </LocaleResource>
+  <LocaleResource Name="enums.FoxNetSoft.Plugin.Feed.ImportManager.Domain.ProductKey.Gtin">
+    <Value>Gtin</Value>
+  </LocaleResource>
+  <LocaleResource Name="enums.FoxNetSoft.Plugin.Feed.ImportManager.Domain.ProductKey.ManufacturerPartNumber">
+    <Value>Manufacturer part number</Value>
+  </LocaleResource>
+	<LocaleResource Name="enums.FoxNetSoft.Plugin.Feed.ImportManager.Domain.ProductKey.Name">
+		<Value>Name</Value>
+	</LocaleResource>
+	<LocaleResource Name="enums.FoxNetSoft.Plugin.Feed.ImportManager.Domain.DefaultColumnDestination.None">
+    <Value>None</Value>
+  </LocaleResource>
+  <LocaleResource Name="enums.FoxNetSoft.Plugin.Feed.ImportManager.Domain.DefaultColumnDestination.Key">
+    <Value>Key</Value>
+  </LocaleResource>
+  <LocaleResource Name="enums.FoxNetSoft.Plugin.Feed.ImportManager.Domain.DefaultColumnDestination.Picture">
+    <Value>Picture</Value>
+  </LocaleResource>
+  <LocaleResource Name="enums.FoxNetSoft.Plugin.Feed.ImportManager.Domain.DefaultColumnDestination.PictureAltAttribute">
+    <Value>Picture Alt attribute</Value>
+  </LocaleResource>
+  <LocaleResource Name="enums.FoxNetSoft.Plugin.Feed.ImportManager.Domain.DefaultColumnDestination.PictureTitleAttribute">
+    <Value>Picture Title attribute</Value>
+  </LocaleResource>
+  <LocaleResource Name="enums.FoxNetSoft.Plugin.Feed.ImportManager.Domain.DefaultColumnDestination.Category">
+    <Value>Category Name or ID</Value>
+  </LocaleResource>
+  <LocaleResource Name="enums.FoxNetSoft.Plugin.Feed.ImportManager.Domain.DefaultColumnDestination.Manufacturer">
+    <Value>Manufacturer Name or ID</Value>
+  </LocaleResource>
+	<LocaleResource Name="enums.FoxNetSoft.Plugin.Feed.ImportManager.Domain.DefaultColumnDestination.Vendor">
+		<Value>Vendor Name or ID</Value>
+	</LocaleResource>
+	<LocaleResource Name="enums.FoxNetSoft.Plugin.Feed.ImportManager.Domain.DefaultColumnDestination.CustomerRole">
+		<Value>CustomerRole Name or ID</Value>
+	</LocaleResource>
+	<LocaleResource Name="enums.FoxNetSoft.Plugin.Feed.ImportManager.Domain.DefaultColumnDestination.Discount">
+    <Value>Discount Name or ID</Value>
+  </LocaleResource>
+  <LocaleResource Name="enums.FoxNetSoft.Plugin.Feed.ImportManager.Domain.DefaultColumnDestination.Language">
+    <Value>Language Id</Value>
+  </LocaleResource>
+  <LocaleResource Name="enums.FoxNetSoft.Plugin.Feed.ImportManager.Domain.DefaultColumnDestination.SeName">
+    <Value>Search engine friendly page name</Value>
+  </LocaleResource>
+  <LocaleResource Name="enums.FoxNetSoft.Plugin.Feed.ImportManager.Domain.DefaultColumnDestination.SpecificationAttribute">
+    <Value>Specification Attribute</Value>
+  </LocaleResource>
+  <LocaleResource Name="enums.FoxNetSoft.Plugin.Feed.ImportManager.Domain.DefaultColumnDestination.SpecificationAttributeOption">
+    <Value>Specification Attribute Option</Value>
+  </LocaleResource>
+  <LocaleResource Name="enums.FoxNetSoft.Plugin.Feed.ImportManager.Domain.DefaultColumnDestination.ProductAttribute">
+    <Value>Product Attribute</Value>
+  </LocaleResource>
+	<LocaleResource Name="enums.FoxNetSoft.Plugin.Feed.ImportManager.Domain.DefaultColumnDestination.ProductAttributeValue">
+		<Value>Product Attribute Value</Value>
+	</LocaleResource>
+	<LocaleResource Name="enums.FoxNetSoft.Plugin.Feed.ImportManager.Domain.DefaultColumnDestination.Download">
+    <Value>Download</Value>
+  </LocaleResource>
+  <LocaleResource Name="enums.FoxNetSoft.Plugin.Feed.ImportManager.Domain.DefaultColumnDestination.SampleDownload">
+    <Value>SampleDownload</Value>
+  </LocaleResource>
+  <LocaleResource Name="enums.FoxNetSoft.Plugin.Feed.ImportManager.Domain.DefaultColumnDestination.DownloadURL">
+    <Value>Download URL</Value>
+  </LocaleResource>
+  <LocaleResource Name="enums.FoxNetSoft.Plugin.Feed.ImportManager.Domain.DefaultColumnDestination.SampleDownloadURL">
+    <Value>SampleDownload URL</Value>
+  </LocaleResource>
+  <LocaleResource Name="enums.FoxNetSoft.Plugin.Feed.ImportManager.Domain.DefaultColumnDestination.PictureDisplayOrder">
+    <Value>Picture Display Order</Value>
+  </LocaleResource>
+  <LocaleResource Name="enums.FoxNetSoft.Plugin.Feed.ImportManager.Domain.DefaultColumnDestination.ImageSquaresPicture">
+    <Value>Image Squares Picture</Value>
+  </LocaleResource>
+  <LocaleResource Name="enums.FoxNetSoft.Plugin.Feed.ImportManager.Domain.DefaultColumnDestination.ParentGroupedProduct">
+    <Value>Parent Grouped Product Key</Value>
+  </LocaleResource>
+	<LocaleResource Name="enums.FoxNetSoft.Plugin.Feed.ImportManager.Domain.DefaultColumnDestination.RelatedProductKey">
+		<Value>Related product Key</Value>
+	</LocaleResource>
+	<LocaleResource Name="enums.FoxNetSoft.Plugin.Feed.ImportManager.Domain.DefaultColumnDestination.CrossSellProductKey">
+		<Value>Cross-sell product Key</Value>
+	</LocaleResource>
+	<LocaleResource Name="enums.FoxNetSoft.Plugin.Feed.ImportManager.Domain.DefaultColumnDestination.DefaultValueSpecificationAttributeAllowFiltering">
+    <Value>Default value for all specification attribute option's field 'Allow Filtering'</Value>
+  </LocaleResource>
+  <LocaleResource Name="enums.FoxNetSoft.Plugin.Feed.ImportManager.Domain.DefaultColumnDestination.DefaultValueSpecificationAttributeShowOnProductPage">
+    <Value>Default value for all specification attribute option's field 'Show On Product Page'</Value>
+  </LocaleResource>
+  <LocaleResource Name="enums.FoxNetSoft.Plugin.Feed.ImportManager.Domain.DefaultColumnDestination.ParentCategory">
+    <Value>Parent Category Id or Name</Value>
+  </LocaleResource>
+  <LocaleResource Name="enums.FoxNetSoft.Plugin.Feed.ImportManager.Domain.DefaultColumnDestination.TaxCategory">
+    <Value>TaxCategory Id or Name</Value>
+  </LocaleResource>
+  <LocaleResource Name="enums.FoxNetSoft.Plugin.Feed.ImportManager.Domain.ProductPictureColumnDestination.Picture">
+    <Value>Picture</Value>
+  </LocaleResource>
+  <LocaleResource Name="enums.FoxNetSoft.Plugin.Feed.ImportManager.Domain.ProductPictureColumnDestination.DisplayOrder">
+    <Value>DisplayOrder</Value>
+  </LocaleResource>
+  <LocaleResource Name="enums.FoxNetSoft.Plugin.Feed.ImportManager.Domain.ProductPictureColumnDestination.AltAttribute">
+    <Value>Alt attribute</Value>
+  </LocaleResource>
+  <LocaleResource Name="enums.FoxNetSoft.Plugin.Feed.ImportManager.Domain.ProductPictureColumnDestination.TitleAttribute">
+    <Value>Title attribute</Value>
+  </LocaleResource>
+  <LocaleResource Name="enums.FoxNetSoft.Plugin.Feed.ImportManager.Domain.DecimalDelimiter.Dot">
+    <Value>Dot</Value>
+  </LocaleResource>
+  <LocaleResource Name="enums.FoxNetSoft.Plugin.Feed.ImportManager.Domain.DecimalDelimiter.Comma">
+    <Value>Comma</Value>
+  </LocaleResource>
+  <LocaleResource Name="enums.FoxNetSoft.Plugin.Feed.ImportManager.Domain.FileSource.Folder">
+    <Value>Folder</Value>
+  </LocaleResource>
+  <LocaleResource Name="enums.FoxNetSoft.Plugin.Feed.ImportManager.Domain.FileSource.Url">
+    <Value>Url</Value>
+  </LocaleResource>
+  <LocaleResource Name="enums.FoxNetSoft.Plugin.Feed.ImportManager.Domain.FileSource.FTP">
+    <Value>FTP/FTPS/SFTP</Value>
+  </LocaleResource>
+  <LocaleResource Name="enums.FoxNetSoft.Plugin.Feed.ImportManager.Domain.FileSource.UploadZipFile">
+    <Value>Upload zip-file</Value>
+  </LocaleResource>
+  <LocaleResource Name="enums.FoxNetSoft.Plugin.Feed.ImportManager.Domain.FileSource.UploadFile">
+	<Value>Upload file</Value>
+  </LocaleResource>
+  <LocaleResource Name="enums.FoxNetSoft.Plugin.Feed.ImportManager.Domain.ReportLevel.Success">
+    <Value>Success</Value>
+  </LocaleResource>
+  <LocaleResource Name="enums.FoxNetSoft.Plugin.Feed.ImportManager.Domain.ReportLevel.Warning">
+    <Value>Warning</Value>
+  </LocaleResource>
+  <LocaleResource Name="enums.FoxNetSoft.Plugin.Feed.ImportManager.Domain.ReportLevel.Error">
+    <Value>Error</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Feed.ImportManager.ImportTemplate.Fields.Id">
+    <Value>Id</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Feed.ImportManager.ImportTemplate.Fields.Id.Hint">
+    <Value>The ID of import template.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Feed.ImportManager.ImportTemplate.Fields.Encoding">
+    <Value>Encoding</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Feed.ImportManager.ImportTemplate.Fields.Encoding.Hint">
+    <Value>Select the format of Encoding (Unicode, UTF8, etc.).</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Feed.ImportManager.ImportTemplate.Fields.ImportAction">
+    <Value>Action</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Feed.ImportManager.ImportTemplate.Fields.ImportAction.Hint">
+    <Value>Select the type of action for import values (Insert and Update existing enities, Only Insert new enities, Update existing enities).</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Feed.ImportManager.ImportTemplate.Fields.ImportFileType">
+    <Value>Format</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Feed.ImportManager.ImportTemplate.Fields.ImportFileType.Hint">
+    <Value>Select the format of import template (CSV, TXT, XLS, etc.).</Value>
+  </LocaleResource>
+	<LocaleResource Name="Admin.FoxNetSoft.Plugin.Feed.ImportManager.ImportTemplate.Fields.EnableScheduler">
+		<Value>Enable Scheduler</Value>
+	</LocaleResource>
+	<LocaleResource Name="Admin.FoxNetSoft.Plugin.Feed.ImportManager.ImportTemplate.Fields.EnableScheduler.Hint">
+		<Value>If this import template has Scheduler.</Value>
+	</LocaleResource>
+	<LocaleResource Name="Admin.FoxNetSoft.Plugin.Feed.ImportManager.ImportTemplate.Fields.EntityType">
+    <Value>Entity</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Feed.ImportManager.ImportTemplate.Fields.EntityType.Hint">
+    <Value>Select the type of entity (Product, Category, Manufacturer, etc.).</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Feed.ImportManager.ImportTemplate.Fields.EmailAccount">
+    <Value>Email Account</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Feed.ImportManager.ImportTemplate.Fields.EmailAccount.Hint">
+    <Value>Select the email account if you want to get report about updating values.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Feed.ImportManager.ImportTemplate.Fields.EntityKey">
+    <Value>Entity Key (Product Key)</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Feed.ImportManager.ImportTemplate.Fields.EntityKey.Hint">
+    <Value>Select the entity key for mapping new values from the feed file and old values from the database. Ex. Product Sku - plugin will look the product using Sku.</Value>
+  </LocaleResource>
+   <LocaleResource Name="Admin.FoxNetSoft.Plugin.Feed.ImportManager.ImportTemplate.Fields.EntityKey.Tips">
+   <Value>
+	   <![CDATA[
+       The plugin will use this key for mapping new values from the feed file and old values from the database.<br />
+	   You must add the Key column in the mapping table. <br />
+	   Example 1:<br />
+	   You want to update the name of products with new values. You exported nopcommerce products in the Excell and leave two columns, ID and Name.<br />
+	   Change the names of products and upload this feed file back yo nopcommerce.<br /> 
+	   You need to configure Entity Key = ID and add column '0' as a Key in the mapping table.
+	   Example 2:<br />
+	   You want to add new options (exc. Red and Black) to the speciaification attributes (ex. Color).<br />
+	   You need to create a csv file with two columns<br />
+	   Attribute, Option<br />
+	   Color, Red<br />
+	   Color, Black<br />
+	   Create the template for importing specification attribute option and configure 'Key' = 'Name', add the column 'Attribute' as a key.<br /> 
+	   The plugin will look for spacifition attribute with the name 'Color' and add new options.<br />
+       Example 3:<br />
+	   'Id' - find products/categories/manufacturers/etc. using nopcommerce product/category/manufacturer/etc Id.<br />
+		 Add the column Key with integer values in the feed file add the plugin will look for products with such IDs.<br />
+       Example 4:<br />
+	   'Sku' - find products using Sku <br />
+		 Add the column with Sku values in the feed file and add this Key in the mapping table.<br />
+	   Example 5:<br />
+	   'Name' - find products/categories/manufacturers/etc. using the Name of product/category/manufacturer/etc.<br />
+		 Add the column with the name of product/category/manufacturer in the feed file and add this Key in the mapping table.<br />
+    ]]>
+	   </Value>	   
+	</LocaleResource>
+	<LocaleResource Name="Admin.FoxNetSoft.Plugin.Feed.ImportManager.ImportTemplate.Fields.Warehouse">
+    <Value>Warehouse</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Feed.ImportManager.ImportTemplate.Fields.Warehouse.Hint">
+    <Value>Select the warehouse from the list if you want to update only values for one warehouse.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Feed.ImportManager.ImportTemplate.Fields.Manufacturer">
+    <Value>Manufacturer</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Feed.ImportManager.ImportTemplate.Fields.Manufacturer.Hint">
+    <Value>Select the manufacturer from the list if you want to update only products of one manufacturer.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Feed.ImportManager.ImportTemplate.Fields.Vendor">
+    <Value>Vendor</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Feed.ImportManager.ImportTemplate.Fields.Vendor.Hint">
+    <Value>Select the vendor from the list if you want to update only products of one vendor.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Feed.ImportManager.ImportTemplate.Fields.Name">
+    <Value>Name</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Feed.ImportManager.ImportTemplate.Fields.Name.Hint">
+    <Value>The name of template. This name can help you to order your update teamplates.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Feed.ImportManager.ImportTemplate.Fields.Name.Required">
+    <Value>Name is required.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Feed.ImportManager.ImportTemplate.Fields.AdminComment">
+    <Value>Admin Comment</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Feed.ImportManager.ImportTemplate.Fields.AdminComment.Hint">
+    <Value>Admin Comment.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Feed.ImportManager.ImportTemplate.Fields.SkipFirstLine">
+    <Value>Skip first line in the csv/txt/xlsx file</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Feed.ImportManager.ImportTemplate.Fields.SkipFirstLine.Hint">
+    <Value>Skip first line in the csv/txt/xlsx file, because this line has a column header.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Feed.ImportManager.ImportTemplate.Fields.RemoveTierPrices">
+    <Value>Remove tier prices</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Feed.ImportManager.ImportTemplate.Fields.RemoveTierPrices.Hint">
+    <Value>If product from the import file has new tier prices plugin removes old tier prices for this product.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Feed.ImportManager.ImportTemplate.Fields.RemoveProductAttributes">
+    <Value>Remove all old Product Attributes</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Feed.ImportManager.ImportTemplate.Fields.RemoveProductAttributes.Hint">
+    <Value>If product from the import file has new Product Attribute Values plugin removes old all Product Attributes and Product Attributes Values for this product.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Feed.ImportManager.ImportTemplate.Fields.RemoveProductAttributeCombinations">
+    <Value>Remove all old Product Attribute Combinations</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Feed.ImportManager.ImportTemplate.Fields.RemoveProductAttributeCombinations.Hint">
+    <Value>If product from the import file has new Product Attribute Combinations plugin removes old all Product Attribute Combinations for this product.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Feed.ImportManager.ImportTemplate.Fields.RemoveProductAttributeValues">
+    <Value>Remove old Product Attributes Values</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Feed.ImportManager.ImportTemplate.Fields.RemoveProductAttributeValues.Hint">
+    <Value>If product from the import file has new Product Attribute Values plugin removes old Product Attributes Values for this product and add the new ones.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Feed.ImportManager.ImportTemplate.Fields.RemoveProductSpecifications">
+    <Value>Remove all old Product Specifications</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Feed.ImportManager.ImportTemplate.Fields.RemoveProductSpecifications.Hint">
+    <Value>If product from the import file has new Product Specification Options plugin removes old all Product Specifications and Product Specification Options for this product.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Feed.ImportManager.ImportTemplate.Fields.RemoveProductSpecificationOptions">
+    <Value>Remove old Product Specification Options</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Feed.ImportManager.ImportTemplate.Fields.RemoveProductSpecificationOptions.Hint">
+    <Value>If product from the import file has new Product Specification Options plugin removes old Product Specification Options for this product and add the new ones.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Feed.ImportManager.ImportTemplate.Fields.RemovePictures">
+    <Value>Remove old pictures</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Feed.ImportManager.ImportTemplate.Fields.RemovePictures.Hint">
+    <Value>If product from the import file has pictures plugin removes old pictures before.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Feed.ImportManager.ImportTemplate.Fields.RemoveAssociatedPicture">
+    <Value>Remove old associated picture</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Feed.ImportManager.ImportTemplate.Fields.RemoveAssociatedPicture.Hint">
+    <Value>If product attribute value or product attribute combination has picture than plugin will remove old associated picture from the picture list of the products.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Feed.ImportManager.ImportTemplate.Fields.RemoveCategories">
+    <Value>Remove old category mappings</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Feed.ImportManager.ImportTemplate.Fields.RemoveCategories.Hint">
+    <Value>If product from the import file has category mapping than plugin removes old category mappings before.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Feed.ImportManager.ImportTemplate.Fields.RemoveManufacturers">
+    <Value>Remove old manufacturer mappings</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Feed.ImportManager.ImportTemplate.Fields.RemoveManufacturers.Hint">
+    <Value>If product from the import file has manufacturer mappings than plugin removes old manufacturer mappings before.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Feed.ImportManager.ImportTemplate.Fields.RemoveTags">
+    <Value>Remove old Product mapping Tags</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Feed.ImportManager.ImportTemplate.Fields.RemoveTags.Hint">
+    <Value>If product from the import file has tag mappings than plugin removes old tag mappings before.</Value>
+  </LocaleResource>
+	<LocaleResource Name="Admin.FoxNetSoft.Plugin.Feed.ImportManager.ImportTemplate.Fields.RemoveRelatedProduct">
+		<Value>Remove old Related Products</Value>
+	</LocaleResource>
+	<LocaleResource Name="Admin.FoxNetSoft.Plugin.Feed.ImportManager.ImportTemplate.Fields.RemoveRelatedProduct.Hint">
+		<Value>If product from the import file has Related Products than plugin removes old Related Products before.</Value>
+	</LocaleResource>
+	<LocaleResource Name="Admin.FoxNetSoft.Plugin.Feed.ImportManager.ImportTemplate.Fields.RemoveCrossSellProduct">
+		<Value>Remove old Cross-Sell Products</Value>
+	</LocaleResource>
+	<LocaleResource Name="Admin.FoxNetSoft.Plugin.Feed.ImportManager.ImportTemplate.Fields.RemoveCrossSellProduct.Hint">
+		<Value>If product from the import file has Cross-Sell Products than plugin removes old Cross-Sell Products before.</Value>
+	</LocaleResource>
+	<LocaleResource Name="Admin.FoxNetSoft.Plugin.Feed.ImportManager.ImportTemplate.Fields.UpdateExistingSpecifications">
+    <Value>Update existing product specification values</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Feed.ImportManager.ImportTemplate.Fields.UpdateExistingSpecifications.Hint">
+    <Value>If product has such product specification value than plugin will replace it. Example. Product has Color 'Red' and you want to replace it with new value 'Black'. Otherway plugin will add the new specififctaion option value and this product will have 'Red' and 'Black'.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Feed.ImportManager.ImportTemplate.Fields.AddNewSpecificationOption">
+    <Value>Add new specification option</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Feed.ImportManager.ImportTemplate.Fields.AddNewSpecificationOption.Hint">
+    <Value>If specification attribute doesn't have such specififcation option than plugin will add it. Example. Specification attribute 'Color' doesn't have option 'Red' than plugin will add it with default values and other products will use it.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Feed.ImportManager.ImportTemplate.Fields.ColumnDelimiter">
+    <Value>Column delimiter</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Feed.ImportManager.ImportTemplate.Fields.ColumnDelimiter.Hint">
+    <Value>Column delimiter (ex. ',', ';','\t', 'tab'). Put value without quotes.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Feed.ImportManager.ImportTemplate.Fields.FieldEnclosure">
+    <Value>Field enclosure</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Feed.ImportManager.ImportTemplate.Fields.FieldEnclosure.Hint">
+    <Value>Some of field uses " for enclosing. Put value without quotes, ex. ".</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Feed.ImportManager.ImportTemplate.Fields.DecimalDelimiter">
+    <Value>Decimal Delimiter</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Feed.ImportManager.ImportTemplate.Fields.DecimalDelimiter.Hint">
+    <Value>Select decimal delimiter for price value (dot or comma).</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Feed.ImportManager.ImportTemplate.Fields.DateTimeFormat">
+    <Value>DateTime format</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Feed.ImportManager.ImportTemplate.Fields.DateTimeFormat.Hint">
+    <Value>DateTime format, ex. 'yyyy-dd-MM hh:mm tt' or 'dd.MM.yyyy hh:mm:ss'.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Feed.ImportManager.ImportTemplate.Fields.EnableBackUp">
+    <Value>Enable BackUp</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Feed.ImportManager.ImportTemplate.Fields.EnableBackUp.Hint">
+    <Value>Save import file in BackUp folder after importing file.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Feed.ImportManager.ImportTemplate.Fields.BackupFolder">
+    <Value>Backup folder</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Feed.ImportManager.ImportTemplate.Fields.BackupFolder.Hint">
+    <Value>Provide folder for BackUp on the server side.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Feed.ImportManager.ImportTemplate.Fields.BackupFolder.Description">
+    <Value>Provide folder for BackUp using absolute or reletive format. 'd:\backup', '~/Plugins/FoxNetSoft.ImportManager/Backup'</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Feed.ImportManager.ImportTemplate.Fields.FileSource">
+    <Value>Source of file(s)</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Feed.ImportManager.ImportTemplate.Fields.FileSource.Hint">
+    <Value>Select the source for import file(s).</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Feed.ImportManager.ImportTemplate.Fields.FileFolder">
+    <Value>File folder (path)</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Feed.ImportManager.ImportTemplate.Fields.FileFolder.Hint">
+    <Value>Provide the folder for file(s) or direct file path on th server side. You can use static or reletive folder(path) with mask *.csv - for all files from the folder with extention 'csv'.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Feed.ImportManager.ImportTemplate.Fields.FileUrl">
+    <Value>File Url</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Feed.ImportManager.ImportTemplate.Fields.FileUrl.Hint">
+    <Value>Provide the file URL for one file. You must use direct URL.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Feed.ImportManager.ImportTemplate.Fields.FileMaskFTP">
+    <Value>File name</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Feed.ImportManager.ImportTemplate.Fields.FileMaskFTP.Hint">
+    <Value>Provide the file name for downloading from FTP. You cam use mask, ex. *.csv.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Feed.ImportManager.ImportTemplate.Fields.Report">
+    <Value>Report</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Feed.ImportManager.ImportTemplate.Fields.Report.Hint">
+    <Value>The report of running of this import task.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Feed.ImportManager.ImportTemplate.BackToList">
+    <Value>Back to list</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Feed.ImportManager.ImportTemplate.AddNew">
+    <Value>Add a new import template</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Feed.ImportManager.ImportTemplate.Edit">
+    <Value>Edit the import template</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Feed.ImportManager.ImportTemplate.StartTask">
+    <Value>Import now</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Feed.ImportManager.ImportTemplate.StartTaskFake">
+    <Value>Emulate import (test)</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Feed.ImportManager.FTPSettings.Fields.Protocol">
+    <Value>Protocol</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Feed.ImportManager.FTPSettings.Fields.Protocol.Hint">
+    <Value>Protocol FTP/FTPS/SFTP</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Feed.ImportManager.FTPSettings.Fields.HostName">
+    <Value>Host Name</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Feed.ImportManager.FTPSettings.Fields.HostName.Hint">
+    <Value>Host Name. e.g. ftp.domain.com.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Feed.ImportManager.FTPSettings.Fields.Port">
+    <Value>Port</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Feed.ImportManager.FTPSettings.Fields.Port.Hint">
+    <Value>Port.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Feed.ImportManager.FTPSettings.Fields.UserName">
+    <Value>User Name</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Feed.ImportManager.FTPSettings.Fields.UserName.Hint">
+    <Value>User Name.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Feed.ImportManager.FTPSettings.Fields.Password">
+    <Value>Password</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Feed.ImportManager.FTPSettings.Fields.Password.Hint">
+    <Value>Password.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Feed.ImportManager.FTPSettings.Fields.PassiveMode">
+    <Value>Passive Mode</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Feed.ImportManager.FTPSettings.Fields.PassiveMode.Hint">
+    <Value>Passive Mode.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Feed.ImportManager.FTPSettings.CheckFTPConenction">
+    <Value>Check FTP connection</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Feed.ImportManager.FTPSettings.Success">
+    <Value>The file has been downloaded successfully from FTP.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Feed.ImportManager.FTPSettings.Error">
+    <Value>Can't read file from FTP.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Feed.ImportManager.ImportColumn.Fields.ColumnSource">
+    <Value>Column source</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Feed.ImportManager.ImportColumn.Fields.ColumnSource.Hint">
+    <Value>Column source (column name or column number, ex. 1).</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Feed.ImportManager.ImportColumn.Fields.ColumnDestination">
+    <Value>Column destination</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Feed.ImportManager.ImportColumn.Fields.ColumnDestination.Hint">
+    <Value>Column destination.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Feed.ImportManager.ImportReport.Fields.CreatedOn">
+    <Value>Created on</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Feed.ImportManager.ImportReport.Fields.FullMessage">
+    <Value>Details</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Feed.ImportManager.ImportReport.Fields.ImportTemplate">
+    <Value>Template</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Feed.ImportManager.ImportReport.Fields.ReportLevel">
+    <Value>Report level</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Feed.ImportManager.ImportReport.Tab.Main">
+    <Value>Main</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Feed.ImportManager.ImportReport.Tab.ImportSettings">
+    <Value>Import settings</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Feed.ImportManager.ImportReport.Tab.ColumnMapping">
+    <Value>Column mapping</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Feed.ImportManager.ImportReport.Tab.Shedule">
+    <Value>Schedule Settings</Value>
+  </LocaleResource>
+    <LocaleResource Name="Admin.FoxNetSoft.Plugin.Feed.ImportManager.ImportReport.Tab.Reports">
+    <Value>Reports</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Feed.ImportManager.ImportColumn.SaveBeforeEdit">
+    <Value>You need to save the import template before you can add new column mapping.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Feed.ImportManager.ImportReport.SaveBeforeEdit">
+    <Value>You need to save the import template before you can see the report list.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Feed.ImportManager.ImportTemplate.Running">
+    <Value>Running...</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Feed.ImportManager.ImportTemplate.BackupFiles">
+    <Value>Backup files</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Feed.ImportManager.ImportTemplate.StartImport">
+    <Value>Import now</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Feed.ImportManager.Report.List.Manage">
+    <Value>Reports</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Feed.ImportManager.Report.List.CreatedOnFrom">
+    <Value>Created from</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Feed.ImportManager.Report.List.CreatedOnFrom.Hint">
+    <Value>The creation from date for the search.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Feed.ImportManager.Report.List.CreatedOnTo">
+    <Value>Created to</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Feed.ImportManager.Report.List.CreatedOnTo.Hint">
+    <Value>The creation to date for the search.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Feed.ImportManager.Report.List.ReportLevel">
+    <Value>Error level</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Feed.ImportManager.Report.List.ReportLevel.Hint">
+    <Value>Select a error level.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Feed.ImportManager.Menu.Name">
+    <Value>Import manager</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Feed.ImportManager.Menu.SubMenu1">
+    <Value>Templates</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Feed.ImportManager.Menu.SubMenu2">
+    <Value>Report</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Feed.ImportManager.Menu.Configure">
+    <Value>Configure</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Feed.ImportManager.ImportTemplate.ColumnMapping.Description">
+    <Value>You can use the column name from csv/xlsx file (ex. 'price') or column ID (ex. 0 or 1, etc. from 0) for values for column source. Don't forget to add the column for 'Key'.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Feed.ImportManager.ColumnMapping.ReadColumns">
+    <Value>Read column names</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Feed.ImportManager.ImportTemplate.ColumnMapping.ReadColumns.Description">
+    <Value>You can read column names from the first file and that map them in internal nop values.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Feed.ImportManager.ImportTemplate.Manufacturer.All">
+    <Value>All manufacturers</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Feed.ImportManager.ImportTemplate.Vendor.All">
+    <Value>All vendors</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Feed.ImportManager.ImportTemplate.ReadColumns.Failed">
+    <Value>Can't load columns from the file.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Feed.ImportManager.ImportTemplate.ReadColumns.Success">
+    <Value>We read columns from the file.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Feed.ImportManager.ImportTemplate.EmailAccount.None">
+    <Value>[None]</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Feed.ImportManager.StockQuantityHistory.Message">
+    <Value>The stock quantity has been updated (Import Manager).</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Feed.ImportManager.ImportTemplate.EmailAccount.Description">
+    <Value>You can send report about importing to this e-mail address.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Feed.ImportManager.Email.Subject">
+    <Value>Report about import.</Value>
+  </LocaleResource>
+  <LocaleResource Name="enums.FoxNetSoft.Plugin.Feed.ImportManager.Domain.ImportAction.InsertAndUpdate">
+    <Value>Insert and Update</Value>
+  </LocaleResource>
+  <LocaleResource Name="enums.FoxNetSoft.Plugin.Feed.ImportManager.Domain.ImportAction.Insert">
+    <Value>Insert</Value>
+  </LocaleResource>
+  <LocaleResource Name="enums.FoxNetSoft.Plugin.Feed.ImportManager.Domain.ImportAction.Update">
+    <Value>Update</Value>
+  </LocaleResource>
+  <LocaleResource Name="enums.FoxNetSoft.Plugin.Feed.ImportManager.Domain.EncodingAdjustment.Auto">
+    <Value>Auto        </Value>
+  </LocaleResource>
+  <LocaleResource Name="enums.FoxNetSoft.Plugin.Feed.ImportManager.Domain.EncodingAdjustment.UTF8">
+    <Value>UTF-8       </Value>
+  </LocaleResource>
+  <LocaleResource Name="enums.FoxNetSoft.Plugin.Feed.ImportManager.Domain.EncodingAdjustment.Windows1251">
+    <Value>Windows-1251</Value>
+  </LocaleResource>
+  <LocaleResource Name="enums.FoxNetSoft.Plugin.Feed.ImportManager.Domain.EncodingAdjustment.ISO88597">
+    <Value>ISO-8859-7  </Value>
+  </LocaleResource>
+  <LocaleResource Name="enums.FoxNetSoft.Plugin.Feed.ImportManager.Domain.EncodingAdjustment.Unicode">
+    <Value>Unicode     </Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Feed.ImportManager.Domain.ProductKey">
+    <Value>Key (Product Key)</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Feed.ImportManager.Domain.CategoryKey">
+    <Value>Key (Category Id)</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Feed.ImportManager.Domain.ManufacturerKey">
+    <Value>Key (Manufacturer Id)</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Feed.ImportManager.Domain.SpecificationKey">
+    <Value>Key (Specification Id)</Value>
+  </LocaleResource>
+	<LocaleResource Name="Admin.FoxNetSoft.Plugin.Feed.ImportManager.Domain.ProductAttributeKey">
+		<Value>Key (Product Attribute Id)</Value>
+	</LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Feed.ImportManager.SpecificationAttributePrefix">
+    <Value>Specification attribute '{0}'</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Feed.ImportManager.ProductAttributePrefix">
+    <Value>Product attribute '{0}'</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Feed.ImportManager.StorePrefix">
+    <Value>Store '{0}'</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Feed.ImportManager.AclPrefix">
+    <Value>Customer role '{0}'</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Feed.ImportManager.Copy">
+    <Value>Copy</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Feed.ImportManager.Copy.Name.New">
+    <Value>{0} - copy</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Feed.ImportManager.Feed.Copied">
+    <Value>The feed template has been copied successfully</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Feed.ImportManager.UploadZipFile.ZIPFile">
+    <Value>ZIP file</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FoxNetSoft.Plugin.Feed.ImportManager.UploadZipFile.ImportFromZIPTip">
+    <Value>
+      <![CDATA[Import data from ZIP file. This ZIP has to have one feed file in csv/txt/xlxs/xml format and pictures, if you need to import them. Plugin will upload this ZIP file to the server and will try to import new values from it.<br />
+       Example:<br />
+       newproducts.zip has files:<br />
+       newproduct.csv - the feed file<br />
+       and pictures:<br />
+       Iphone.jpg<br />
+       Ipad.jpg<br />
+       Stylus.jpg<br />
+    ]]></Value>
+  </LocaleResource>
+	<LocaleResource Name="Admin.FoxNetSoft.Plugin.Feed.ImportManager.UploadFile.File">
+		<Value>Feed file</Value>
+	</LocaleResource>
+	<LocaleResource Name="Admin.FoxNetSoft.Plugin.Feed.ImportManager.UploadFile.ImportFromTip">
+		<Value>
+			<![CDATA[Import data from the feed file (XML, CSV, XLSX, TSV).]]>
+		</Value>
+	</LocaleResource>
+</Language>

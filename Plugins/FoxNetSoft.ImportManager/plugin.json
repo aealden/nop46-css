@@ -1,0 +1,11 @@
+﻿{
+  "Group": "Feed",
+  "FriendlyName": "Import Manager",
+  "SystemName": "FoxNetSoft.ImportManager",
+  "Version": "2.24",
+  "SupportedVersions": [ "4.60" ],
+  "Author": "FoxNetSoft",
+  "DisplayOrder": 1,
+  "FileName": "FoxNetSoft.Plugin.Feed.ImportManager.dll",
+  "Description": "Automatic import stock and price, etc."
+}

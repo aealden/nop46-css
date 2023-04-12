@@ -1,0 +1,95 @@
+﻿@model FoxNetSoft.Plugin.Feed.ImportManager.Models.ImportTemplateModel
+<div class="cards-group">
+    <div class="card card-default">
+        <div class="card-body">
+            <style>
+                ul.shedulelist {
+                    list-style: outside none none;
+                    padding-left: 0;
+                }
+
+                    ul.shedulelist.floated {
+                        width: 560px;
+                    }
+
+                    ul.shedulelist li.selected {
+                        background-color: #fff9c8;
+                        border-color: #afafaf;
+                    }
+
+                    ul.shedulelist.floated li {
+                        float: left;
+                        margin-right: 5px !important;
+                        width: 80px;
+                    }
+
+                    ul.shedulelist li {
+                        background-color: #efefef;
+                        border: 1px solid #cfcfcf;
+                        margin: 2px;
+                        padding: 2px 3px;
+                        position: relative;
+                        width: 220px;
+                    }
+
+                        ul.shedulelist li input {
+                            vertical-align: middle;
+                            margin-top: 0px !important;
+                        }
+            </style>
+            <script>
+                $(document).ready(function () {
+                    $("ul.shedulelist input").click(toggleSheduleCheckBox);
+                    toggleSheduleCheckBox();
+                });
+
+                function toggleSheduleCheckBox() {
+                    if ($(this).is(':checked')) {
+                        $(this).parent().addClass("selected");
+                    }
+                    else {
+                        $(this).parent().removeClass("selected");
+                    }
+                }
+            </script>
+            <div class="form-group row">
+                <div class="col-md-3">
+                    <nop-label asp-for="EnableScheduler" />
+                </div>
+                <div class="col-md-9">
+                    <nop-editor asp-for="EnableScheduler" />
+                    <span asp-validation-for="EnableScheduler"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="card card-default">
+        <div class="card-body">
+            <div class="form-group row">
+                <div class="col-md-3">
+                    <ul class="shedulelist">
+                        @foreach (var dayweek in Model.SheduleSettings.DayWeeks)
+                        {
+                            <li class="@(dayweek.Selected?"selected":"")">
+                                <input id="shedulesettings_dayweek_@(dayweek.Value)" type="checkbox" name="shedulesettings_dayweek" value="@dayweek.Value" checked="@dayweek.Selected" />
+                                <label for="shedulesettings_dayweek_@(dayweek.Value)">@dayweek.Text</label>
+                            </li>
+                        }
+                    </ul>
+                </div>
+                <div class="col-md-9">
+                    <p>Times are expressed in UTC (Coordinated Universal Time)</p>
+                    <ul class="shedulelist floated">
+                        @foreach (var time in Model.SheduleSettings.Times)
+                        {
+                            <li class="@(time.Selected?"selected":"")">
+                                <input id="shedulesettings_time_@(time.Value)" type="checkbox" name="shedulesettings_time" value="@time.Value" checked="@time.Selected" />
+                                <label for="shedulesettings_time_@(time.Value)">@time.Text</label>
+                            </li>
+                        }
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

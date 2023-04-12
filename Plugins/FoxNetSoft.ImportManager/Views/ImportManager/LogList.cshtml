@@ -1,0 +1,165 @@
+@model FoxNetSoft.Plugin.Feed.ImportManager.Models.ReportSearchModel
+@using FoxNetSoft.Plugin.Feed.ImportManager.Models
+@using Nop.Web.Framework.UI
+@{
+    Layout = "_AdminLayout";
+    //page title
+
+    ViewBag.PageTitle = @T("Admin.FoxNetSoft.Plugin.Feed.ImportManager.Report.List.Manage").Text;
+
+    NopHtml.SetActiveMenuItemSystemName("FoxNetSoft.ImportManager.Report");
+}
+<form asp-controller="ImportManager" asp-action="LogList" method="post">
+    <div class="content-header clearfix">
+        <h1 class="float-left">
+            @T("Admin.FoxNetSoft.Plugin.Feed.ImportManager.Report.List.Manage")
+        </h1>
+        <div class="float-right">
+            <button type="button" id="delete-selected" class="btn bg-red">
+                <i class="fa fa-trash-o"></i>
+                @T("Admin.System.Log.DeleteSelected")
+            </button>
+            <nop-action-confirmation asp-button-id="delete-selected" />
+            <button type="submit" id="clearallreports" name="clearallreports" class="btn bg-red">
+                <i class="fa fa-trash-o"></i>
+                @T("Admin.System.Log.ClearLog")
+            </button>
+            <nop-delete-confirmation asp-button-id="clearallreports" />
+        </div>
+    </div>
+
+    <div class="content">
+        <div class="form-horizontal">
+            <div class="cards-group">
+                <div class="card card-default">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group row">
+                                    <div class="col-md-4">
+                                        <nop-label asp-for="CreatedOnFrom" />
+                                    </div>
+                                    <div class="col-md-8">
+                                        <nop-editor asp-for="CreatedOnFrom" />
+                                        <span asp-validation-for="CreatedOnFrom"></span>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col-md-4">
+                                        <nop-label asp-for="CreatedOnTo" />
+                                    </div>
+                                    <div class="col-md-8">
+                                        <nop-editor asp-for="CreatedOnTo" />
+                                        <span asp-validation-for="CreatedOnTo"></span>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col-md-4">
+                                        <nop-label asp-for="ReportLevelId" />
+                                    </div>
+                                    <div class="col-md-8">
+                                        <nop-select asp-for="ReportLevelId" asp-items="Model.AvailableReportLevels" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="text-center col-12">
+                                <button type="button" id="search-log" class="btn btn-primary btn-search">
+                                    <i class="fas fa-search"></i>
+                                    @T("Admin.Common.Search")
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card card-default">
+                    <div class="card-body">
+                        @await Html.PartialAsync("Table", new DataTablesModel
+                        {
+                            Name = "importmanager-report-grid",
+                            UrlRead = new DataUrl("LogList", "ImportManager", null),
+                            SearchButtonId = "search-log",
+                            Length = Model.PageSize,
+                            LengthMenu = Model.AvailablePageSizes,
+                            Filters = new List<FilterParameter>
+                            {
+                                new FilterParameter(nameof(Model.CreatedOnFrom)),
+                                new FilterParameter(nameof(Model.CreatedOnTo)),
+                                new FilterParameter(nameof(Model.ReportLevelId))
+                            },
+                            ColumnCollection = new List<ColumnProperty>
+                            {
+                                new ColumnProperty(nameof(ImportReportModel.Id))
+                                {
+                                    IsMasterCheckBox = true,
+                                    Render = new RenderCheckBox("checkbox_log"),
+                                    ClassName =  NopColumnClassDefaults.CenterAll,
+                                    Width = "50",
+                                },
+                                new ColumnProperty(nameof(ImportReportModel.CreatedOn))
+                                {
+                                    Title = T("Admin.FoxNetSoft.Plugin.Feed.ImportManager.ImportReport.Fields.CreatedOn").Text,
+                                    Width = "200",
+                                    Render = new RenderDate()
+                                },
+                                new ColumnProperty(nameof(ImportReportModel.ReportLevel))
+                                {
+                                    Title = T("Admin.FoxNetSoft.Plugin.Feed.ImportManager.ImportReport.Fields.ReportLevel").Text,
+                                    Width = "100"
+                                },
+                                new ColumnProperty(nameof(ImportReportModel.ImportTemplate))
+                                {
+                                    Title = T("Admin.FoxNetSoft.Plugin.Feed.ImportManager.ImportReport.Fields.ImportTemplate").Text,
+                                    Width = "250"
+                                },
+                                new ColumnProperty(nameof(ImportReportModel.ImportTemplateId))
+                                {
+                                    Title = T("Admin.Common.View").Text,
+                                    Width = "150",
+                                    ClassName = NopColumnClassDefaults.Button,
+                                    Render = new RenderButtonView(new DataUrl("~/Admin/ImportManager/Edit/", nameof(ImportReportModel.ImportTemplateId)))
+                                },
+                                new ColumnProperty(nameof(ImportReportModel.FullMessage))
+                                {
+                                    Title = T("Admin.FoxNetSoft.Plugin.Feed.ImportManager.ImportReport.Fields.FullMessage").Text,
+                                    Encode = false
+                                }
+                            }
+                        })
+
+                        <script>
+                            $(document).ready(function() {
+                                //"delete selected" button
+                                $("#delete-selected-action-confirmation-submit-button").bind("click", function () {
+                                    var postData = {
+                                        selectedIds: selectedIds
+                                    };
+                                    addAntiForgeryToken(postData);
+                                    $.ajax({
+                                        cache: false,
+                                        type: "POST",
+                                        url: "@(Url.Action("DeleteSelectedReports", "ImportManager"))",
+                                        data: postData,
+                                        traditional: true,
+                                        error: function (jqXHR, textStatus, errorThrown) {
+                                            $('#deleteSelectedFailed-info').text(errorThrown);
+                                            $("#deleteSelectedFailed").click();
+                                        },
+                                        complete: function (jqXHR, textStatus) {
+                                            updateTable('#importmanager-report-grid');
+                                        }
+                                    });
+                                    $('#delete-selected-action-confirmation').modal('toggle');
+                                    return false;
+                                });
+                            });
+                        </script>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+<nop-alert asp-alert-id="deleteSelectedFailed" />

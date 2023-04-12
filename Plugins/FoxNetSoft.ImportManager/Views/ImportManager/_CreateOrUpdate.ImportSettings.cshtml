@@ -1,0 +1,218 @@
+﻿@model FoxNetSoft.Plugin.Feed.ImportManager.Models.ImportTemplateModel
+<div class="cards-group">
+    <div class="card card-default">
+        <div class="card-body">
+            <div class="form-group row" id="pnSkipFirstLine">
+                <div class="col-md-3">
+                    <nop-label asp-for="SkipFirstLine" />
+                </div>
+                <div class="col-md-9">
+                    <nop-editor asp-for="SkipFirstLine" />
+                    <span asp-validation-for="SkipFirstLine"></span>
+                </div>
+            </div>
+            <div class="form-group row" id="pnColumnDelimiter">
+                <div class="col-md-3">
+                    <nop-label asp-for="ColumnDelimiter" />
+                </div>
+                <div class="col-md-9">
+                    <nop-editor asp-for="ColumnDelimiter" />
+                    <span asp-validation-for="ColumnDelimiter"></span>
+                </div>
+            </div>
+            <div class="form-group row" id="pnFieldEnclosure">
+                <div class="col-md-3">
+                    <nop-label asp-for="FieldEnclosure" />
+                </div>
+                <div class="col-md-9">
+                    <nop-editor asp-for="FieldEnclosure" />
+                    <span asp-validation-for="FieldEnclosure"></span>
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-md-3">
+                    <nop-label asp-for="DateTimeFormat" />
+                </div>
+                <div class="col-md-9">
+                    <nop-editor asp-for="DateTimeFormat" />
+                    <span asp-validation-for="DateTimeFormat"></span>
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-md-3">
+                    <nop-label asp-for="DecimalDelimiterId" />
+                </div>
+                <div class="col-md-9">
+                    <nop-select asp-for="DecimalDelimiterId" asp-items="Model.AvailableDecimalDelimiters" />
+                    <span asp-validation-for="DecimalDelimiterId"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="card card-default productentity">
+        <div class="card-body">
+            <div class="form-group row" @(Model.AvailableWarehouses.SelectionIsNotPossible() ? Html.Raw("style=\"display:none\"") : null)>
+                <div class="col-md-3">
+                    <nop-label asp-for="WarehouseId" />
+                </div>
+                <div class="col-md-9">
+                    <nop-select asp-for="WarehouseId" asp-items="Model.AvailableWarehouses" />
+                    <span asp-validation-for="WarehouseId"></span>
+                </div>
+            </div>
+            <div class="form-group row" @(Model.AvailableManufacturers.SelectionIsNotPossible() ? Html.Raw("style=\"display:none\"") : null)>
+                <div class="col-md-3">
+                    <nop-label asp-for="ManufacturerId" />
+                </div>
+                <div class="col-md-9">
+                    <nop-select asp-for="ManufacturerId" asp-items="Model.AvailableManufacturers" />
+                    <span asp-validation-for="ManufacturerId"></span>
+                </div>
+            </div>
+            <div class="form-group row" @(Model.AvailableVendors.SelectionIsNotPossible() ? Html.Raw("style=\"display:none\"") : null)>
+                <div class="col-md-3">
+                    <nop-label asp-for="VendorId" />
+                </div>
+                <div class="col-md-9">
+                    <nop-select asp-for="VendorId" asp-items="Model.AvailableVendors" />
+                    <span asp-validation-for="VendorId"></span>
+                </div>
+            </div>
+            <div class="form-group row removeoldvalues" id="pnRemoveTierPrices">
+                <div class="col-md-3">
+                    <nop-label asp-for="RemoveTierPrices" />
+                </div>
+                <div class="col-md-9">
+                    <nop-editor asp-for="RemoveTierPrices" />
+                    <span asp-validation-for="RemoveTierPrices"></span>
+                </div>
+            </div>
+            <div class="form-group row removeoldvalues" id="pnRemoveProductAttributes">
+                <div class="col-md-3">
+                    <nop-label asp-for="RemoveProductAttributes" />
+                </div>
+                <div class="col-md-9">
+                    <nop-editor asp-for="RemoveProductAttributes" />
+                    <span asp-validation-for="RemoveProductAttributes"></span>
+                </div>
+            </div>
+            <div class="form-group row removeoldvalues" id="pnRemoveProductAttributeCombinations">
+                <div class="col-md-3">
+                    <nop-label asp-for="RemoveProductAttributeCombinations" />
+                </div>
+                <div class="col-md-9">
+                    <nop-editor asp-for="RemoveProductAttributeCombinations" />
+                    <span asp-validation-for="RemoveProductAttributeCombinations"></span>
+                </div>
+            </div>
+            <div class="form-group row removeoldvalues" id="pnRemoveProductAttributeValues">
+                <div class="col-md-3">
+                    <nop-label asp-for="RemoveProductAttributeValues" />
+                </div>
+                <div class="col-md-9">
+                    <nop-editor asp-for="RemoveProductAttributeValues" />
+                    <span asp-validation-for="RemoveProductAttributeValues"></span>
+                </div>
+            </div>
+            <div class="form-group row removeoldvalues" id="pnRemoveProductSpecifications">
+                <div class="col-md-3">
+                    <nop-label asp-for="RemoveProductSpecifications" />
+                </div>
+                <div class="col-md-9">
+                    <nop-editor asp-for="RemoveProductSpecifications" />
+                    <span asp-validation-for="RemoveProductSpecifications"></span>
+                </div>
+            </div>
+            <div class="form-group row removeoldvalues" id="pnRemoveProductSpecificationOptions">
+                <div class="col-md-3">
+                    <nop-label asp-for="RemoveProductSpecificationOptions" />
+                </div>
+                <div class="col-md-9">
+                    <nop-editor asp-for="RemoveProductSpecificationOptions" />
+                    <span asp-validation-for="RemoveProductSpecificationOptions"></span>
+                </div>
+            </div>
+            <div class="form-group row removeoldvalues" id="pnRemovePictures">
+                <div class="col-md-3">
+                    <nop-label asp-for="RemovePictures" />
+                </div>
+                <div class="col-md-9">
+                    <nop-editor asp-for="RemovePictures" />
+                    <span asp-validation-for="RemovePictures"></span>
+                </div>
+            </div>
+            <div class="form-group row removeoldvalues" id="pnRemoveAssociatedPicture">
+                <div class="col-md-3">
+                    <nop-label asp-for="RemoveAssociatedPicture" />
+                </div>
+                <div class="col-md-9">
+                    <nop-editor asp-for="RemoveAssociatedPicture" />
+                    <span asp-validation-for="RemoveAssociatedPicture"></span>
+                </div>
+            </div>
+            <div class="form-group row removeoldvalues" id="pnRemoveCategories">
+                <div class="col-md-3">
+                    <nop-label asp-for="RemoveCategories" />
+                </div>
+                <div class="col-md-9">
+                    <nop-editor asp-for="RemoveCategories" />
+                    <span asp-validation-for="RemoveCategories"></span>
+                </div>
+            </div>
+            <div class="form-group row removeoldvalues" id="pnRemoveManufacturers">
+                <div class="col-md-3">
+                    <nop-label asp-for="RemoveManufacturers" />
+                </div>
+                <div class="col-md-9">
+                    <nop-editor asp-for="RemoveManufacturers" />
+                    <span asp-validation-for="RemoveManufacturers"></span>
+                </div>
+            </div>
+            <div class="form-group row removeoldvalues" id="pnRemoveTags">
+                <div class="col-md-3">
+                    <nop-label asp-for="RemoveTags" />
+                </div>
+                <div class="col-md-9">
+                    <nop-editor asp-for="RemoveTags" />
+                    <span asp-validation-for="RemoveTags"></span>
+                </div>
+            </div>
+            <div class="form-group row removeoldvalues" id="pnRemoveRelatedProduct">
+                <div class="col-md-3">
+                    <nop-label asp-for="RemoveRelatedProduct" />
+                </div>
+                <div class="col-md-9">
+                    <nop-editor asp-for="RemoveRelatedProduct" />
+                    <span asp-validation-for="RemoveRelatedProduct"></span>
+                </div>
+            </div>
+            <div class="form-group row removeoldvalues" id="pnRemoveCrossSellProduct">
+                <div class="col-md-3">
+                    <nop-label asp-for="RemoveCrossSellProduct" />
+                </div>
+                <div class="col-md-9">
+                    <nop-editor asp-for="RemoveCrossSellProduct" />
+                    <span asp-validation-for="RemoveCrossSellProduct"></span>
+                </div>
+            </div>
+            <div class="form-group row" id="pnUpdateExistingSpecifications">
+                <div class="col-md-3">
+                    <nop-label asp-for="UpdateExistingSpecifications" />
+                </div>
+                <div class="col-md-9">
+                    <nop-editor asp-for="UpdateExistingSpecifications" />
+                    <span asp-validation-for="UpdateExistingSpecifications"></span>
+                </div>
+            </div>
+            <div class="form-group row" id="pnAddNewSpecificationOption">
+                <div class="col-md-3">
+                    <nop-label asp-for="AddNewSpecificationOption" />
+                </div>
+                <div class="col-md-9">
+                    <nop-editor asp-for="AddNewSpecificationOption" />
+                    <span asp-validation-for="AddNewSpecificationOption"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,131 @@
+@model FoxNetSoft.Plugin.Feed.ImportManager.Models.ImportTemplateSearchModel
+@using FoxNetSoft.Plugin.Feed.ImportManager.Models
+@using Nop.Web.Framework.UI
+@{
+    Layout = "_AdminLayout";
+
+    //page title
+    ViewBag.PageTitle = @T("Admin.FoxNetSoft.Plugin.Feed.ImportManager.List.Manage").Text;
+
+    NopHtml.SetActiveMenuItemSystemName("FoxNetSoft.ImportManager.List");
+}
+<nop-antiforgery-token />
+<div class="content-header clearfix">
+    <h1 class="float-left">
+        @T("Admin.FoxNetSoft.Plugin.Feed.ImportManager.List.Manage")
+    </h1>
+    <div class="float-right">
+        <a asp-action="Create" class="btn bg-blue">
+            <i class="fa fa-plus-square"></i>
+            @T("Admin.Common.AddNew")
+        </a>
+    </div>
+</div>
+
+<div class="content">
+    <div class="form-horizontal">
+        <div class="cards-group">
+            <div class="card card-default panel-search">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group row">
+                                <div class="col-md-4">
+                                    <nop-label asp-for="EntityTypeId" />
+                                </div>
+                                <div class="col-md-8">
+                                    <nop-select asp-for="EntityTypeId" asp-items="Model.AvailableEntityTypes" />
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-md-4">
+                                    <nop-label asp-for="ImportFileTypeId" />
+                                </div>
+                                <div class="col-md-8">
+                                    <nop-select asp-for="ImportFileTypeId" asp-items="Model.AvailableImportFileTypes" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="text-center col-12">
+                            <button type="button" id="btnSearch" class="btn btn-primary btn-search">
+                                <i class="fas fa-search"></i>
+                                @T("Admin.Common.Search")
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card card-default">
+                <div class="card-body">
+                    @await Html.PartialAsync("Table", new DataTablesModel
+{
+Name = "importmanager-grid",
+UrlRead = new DataUrl("List", "ImportManager", null),
+SearchButtonId = "btnSearch",
+Length = Model.PageSize,
+LengthMenu = Model.AvailablePageSizes,
+Filters = new List<FilterParameter>
+    {
+        new FilterParameter(nameof(Model.EntityTypeId)),
+        new FilterParameter(nameof(Model.ImportFileTypeId))
+    },
+ColumnCollection = new List<ColumnProperty>
+    {
+        new ColumnProperty(nameof(ImportTemplateModel.Id))
+        {
+            Title = T("Admin.FoxNetSoft.Plugin.Feed.ImportManager.ImportTemplate.Fields.Id").Text,
+            Width = "30",
+            ClassName = NopColumnClassDefaults.CenterAll
+        },
+        new ColumnProperty(nameof(ImportTemplateModel.EnableScheduler))
+        {
+            Title = T("Admin.FoxNetSoft.Plugin.Feed.ImportManager.ImportTemplate.List.EnableScheduler").Text,
+            Width = "70",
+            ClassName =  NopColumnClassDefaults.CenterAll,
+            Render = new RenderBoolean()
+        },
+        new ColumnProperty(nameof(ImportTemplateModel.EntityType))
+        {
+            Title = T("Admin.FoxNetSoft.Plugin.Feed.ImportManager.ImportTemplate.Fields.EntityType").Text,
+            Width = "160",
+            ClassName = NopColumnClassDefaults.CenterAll
+        },
+        @*new ColumnProperty(nameof(ImportTemplateModel.ImportFileType))
+            {
+                Title = T("Admin.FoxNetSoft.Plugin.Feed.ImportManager.ImportTemplate.Fields.ImportFileType").Text,
+                Width = "50",
+                ClassName = NopColumnClassDefaults.CenterAll
+            },*@
+       new ColumnProperty(nameof(ImportTemplateModel.Name))
+        {
+            Title = T("Admin.FoxNetSoft.Plugin.Feed.ImportManager.ImportTemplate.List.Name").Text,
+            Width = "200"
+        },
+        new ColumnProperty(nameof(ImportTemplateModel.FullMessage))
+        {
+            Title = T("Admin.FoxNetSoft.Plugin.Feed.ImportManager.ImportTemplate.Fields.Report").Text,
+            Encode=false
+        },
+        new ColumnProperty(nameof(ImportTemplateModel.GenerateHTML))
+        {
+            Title = T("Admin.FoxNetSoft.Plugin.Feed.ImportManager.ImportTemplate.StartImport").Text,
+            Encode=false,
+             Width = "100"
+        },
+        new ColumnProperty(nameof(ImportTemplateModel.Id))
+        {
+            Title = T("Admin.Common.Edit").Text,
+            Width = "80",
+            ClassName =  NopColumnClassDefaults.Button,
+            Render = new RenderButtonEdit(new DataUrl("Edit"))
+        }
+    }
+})
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

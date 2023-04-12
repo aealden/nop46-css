@@ -1,0 +1,416 @@
+﻿@model FoxNetSoft.Plugin.Feed.ImportManager.Models.ImportTemplateModel
+<script>
+    $(document).ready(function () {
+        $("#@Html.IdFor(m => m.FileSourceId)").change(function () {
+            $('#pnFileFolder, #pnFileUrl, #pnFileMaskFTP, .feedftpblock, #pnUploadZipFile, #pnUploadFile').hideElement();
+            var selectedItem = $(this).val();
+            switch (selectedItem)
+            {
+                case "@((int)FoxNetSoft.Plugin.Feed.ImportManager.Domain.FileSource.Folder)":
+                    {
+                        $('#pnFileFolder').showElement();
+                        break;
+                    }
+                case "@((int)FoxNetSoft.Plugin.Feed.ImportManager.Domain.FileSource.Url)":
+                    {
+                        $('#pnFileUrl').showElement();
+                        break;
+                    }
+                case "@((int)FoxNetSoft.Plugin.Feed.ImportManager.Domain.FileSource.FTP)":
+                    {
+                        $('#pnFileMaskFTP, .feedftpblock').showElement();
+                        break;
+                    }
+                case "@((int)FoxNetSoft.Plugin.Feed.ImportManager.Domain.FileSource.UploadZipFile)":
+                    {
+                        $('#pnUploadZipFile').showElement();
+                        break;
+                    }
+                case "@((int)FoxNetSoft.Plugin.Feed.ImportManager.Domain.FileSource.UploadFile)":
+                    {
+                        $('#pnUploadFile').showElement();
+                        break;
+                    }
+            }
+        }).change();
+
+            $("#@Html.IdFor(m => m.EntityTypeId)").change(function () {
+                 $('.productentity, .removeoldvalues, #pnUpdateExistingSpecifications, #pnAddNewSpecificationOption').hideElement();
+            var selectedItem = $(this).val();
+            switch (selectedItem)
+            {
+                case "@((int)FoxNetSoft.Plugin.Feed.ImportManager.Domain.EntityType.Product)":
+                    {
+                        $('.productentity, #pnRemoveCategories, #pnRemoveManufacturers, #pnUpdateExistingSpecifications, #pnAddNewSpecificationOption, #pnRemovePictures').showElement();
+                        break;
+                    }
+                case "@((int)FoxNetSoft.Plugin.Feed.ImportManager.Domain.EntityType.ProductTag)":
+                    {
+                        $('.productentity, #pnRemoveTags').showElement();
+                        break;
+                    }
+                case "@((int)FoxNetSoft.Plugin.Feed.ImportManager.Domain.EntityType.ProductCategory)":
+                    {
+                        $('.productentity, #pnRemoveCategories').showElement();
+                        break;
+                    }
+                case "@((int)FoxNetSoft.Plugin.Feed.ImportManager.Domain.EntityType.ProductManufacturer)":
+                    {
+                        $('.productentity, #pnRemoveManufacturers').showElement();
+                        break;
+                    }
+                case "@((int)FoxNetSoft.Plugin.Feed.ImportManager.Domain.EntityType.LocalizedProduct)":
+                case "@((int)FoxNetSoft.Plugin.Feed.ImportManager.Domain.EntityType.StoreMappingProduct)":
+                case "@((int)FoxNetSoft.Plugin.Feed.ImportManager.Domain.EntityType.AclMappingProduct)":
+                case "@((int)FoxNetSoft.Plugin.Feed.ImportManager.Domain.EntityType.ProductAttributeMapping)":
+                    {
+                        $('.productentity').showElement();
+                        break;
+                    }
+                case "@((int)FoxNetSoft.Plugin.Feed.ImportManager.Domain.EntityType.RelatedProduct)":
+                    {
+                        $('.productentity, #pnRemoveRelatedProduct').showElement();
+                        break;
+                    }
+                case "@((int)FoxNetSoft.Plugin.Feed.ImportManager.Domain.EntityType.CrossSellProduct)":
+                    {
+                        $('.productentity, #pnRemoveCrossSellProduct').showElement();
+                        break;
+                    }
+                case "@((int)FoxNetSoft.Plugin.Feed.ImportManager.Domain.EntityType.ProductAttributeValue)":
+                    {
+                        $('.productentity, #pnRemoveProductAttributes, #pnRemoveProductAttributeValues, #pnRemoveAssociatedPicture').showElement();
+                        break;
+                    }
+                case "@((int)FoxNetSoft.Plugin.Feed.ImportManager.Domain.EntityType.ProductSpecification)":
+                    {
+                        $('.productentity, #pnAddNewSpecificationOption, #pnRemoveProductSpecifications, #pnRemoveProductSpecificationOptions').showElement();
+                        break;
+                    }
+                case "@((int)FoxNetSoft.Plugin.Feed.ImportManager.Domain.EntityType.ProductPicture)":
+                    {
+                        $('.productentity, #pnRemovePictures').showElement();
+                        break;
+                    }
+                case "@((int)FoxNetSoft.Plugin.Feed.ImportManager.Domain.EntityType.ProductVideo)":
+                    {
+                        $('.productentity').showElement();
+                        break;
+                    }
+                case "@((int)FoxNetSoft.Plugin.Feed.ImportManager.Domain.EntityType.ProductAttributeCombination)":
+                    {
+                        $('.productentity, #pnRemoveAssociatedPicture, pnRemoveProductAttributeCombinations').showElement();
+                        break;
+                    }
+                case "@((int)FoxNetSoft.Plugin.Feed.ImportManager.Domain.EntityType.TierPrice)":
+                    {
+                        $('.productentity, #pnRemoveTierPrices').showElement();
+                        break;
+                    }
+            }
+        }).change();
+        $("#@Html.IdFor(m => m.ImportFileTypeId)").change(function () {
+            $('#pnSkipFirstLine, #pnColumnDelimiter, #pnFieldEnclosure').hideElement();
+            var selectedItem = $(this).val();
+            switch (selectedItem)
+            {
+                case "@((int)FoxNetSoft.Plugin.Feed.ImportManager.Domain.ImportFileType.CSV)":
+                    {
+                $('#pnSkipFirstLine, #pnColumnDelimiter, #pnFieldEnclosure').showElement();
+                        break;
+                    }
+                case "@((int)FoxNetSoft.Plugin.Feed.ImportManager.Domain.ImportFileType.XML)":
+                    {
+                        break;
+                    }
+                case "@((int)FoxNetSoft.Plugin.Feed.ImportManager.Domain.ImportFileType.XLSX)":
+                    {
+                $('#pnSkipFirstLine, #pnFieldEnclosure').showElement();
+                        break;
+                    }
+                case "@((int)FoxNetSoft.Plugin.Feed.ImportManager.Domain.ImportFileType.TXT)":
+                    {
+                $('#pnSkipFirstLine, #pnColumnDelimiter, #pnFieldEnclosure').showElement();
+                        break;
+                    }
+            }
+        }).change();
+            $("#@Html.IdFor(model => model.EnableBackUp)").click(toggleEnableBackUp);
+            toggleEnableBackUp();
+        });
+
+        function toggleEnableBackUp() {
+            if ($('#@Html.IdFor(model => model.EnableBackUp)').is(':checked')) {
+                $('#pnlbackupfolder, #pnlbackupfilelist').showElement();
+            }
+            else {
+                $('#pnlbackupfolder, #pnlbackupfilelist').hideElement();
+            }
+        }
+</script>
+<div class="cards-group">
+    <div class="card card-default">
+        <div class="card-body">
+            @if (Model.Id > 0)
+            {
+                <div class="form-group row">
+                    <div class="col-md-3">
+                        <nop-label asp-for="Id" />
+                    </div>
+                    <div class="col-md-9">
+                        <input class="form-control text-box single-line" value="@Model.Id" type="text" readonly="readonly">
+                    </div>
+                </div>
+            }
+            <div class="form-group row">
+                <div class="col-md-3">
+                    <nop-label asp-for="EntityTypeId" />
+                </div>
+                <div class="col-md-9">
+                    @if (Model.Id == 0)
+                    {
+                        <nop-select asp-for="EntityTypeId" asp-items="Model.AvailableEntityTypes" />
+                    }
+                    else
+                    {
+                        <input class="form-control text-box single-line" value="@Model.EntityType" type="text" readonly="readonly">
+                        <input asp-for="EntityTypeId" type="hidden" />
+                    }
+                    <span asp-validation-for="EntityTypeId"></span>
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-md-3">
+                    <nop-label asp-for="Name" />
+                </div>
+                <div class="col-md-9">
+                    <nop-editor asp-for="Name" />
+                    <span asp-validation-for="Name"></span>
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-md-3">
+                    <nop-label asp-for="ProductKeyId" />
+                </div>
+                <div class="col-md-9">
+                    <nop-select asp-for="ProductKeyId" asp-items="Model.AvailableProductKeys" />
+                    <span asp-validation-for="ProductKeyId"></span>
+                    <p>
+                        @T("Admin.FoxNetSoft.Plugin.Feed.ImportManager.ImportTemplate.Fields.EntityKey.Tips")
+                    </p>
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-md-3">
+                    <nop-label asp-for="ImportFileTypeId" />
+                </div>
+                <div class="col-md-9">
+                    <nop-select asp-for="ImportFileTypeId" asp-items="Model.AvailableImportFileTypes" />
+                    <span asp-validation-for="ImportFileTypeId"></span>
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-md-3">
+                    <nop-label asp-for="ImportActionId" />
+                </div>
+                <div class="col-md-9">
+                    <nop-select asp-for="ImportActionId" asp-items="Model.AvailableImportActions" />
+                    <span asp-validation-for="ImportActionId"></span>
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-md-3">
+                    <nop-label asp-for="EncodingId" />
+                </div>
+                <div class="col-md-9">
+                    <nop-select asp-for="EncodingId" asp-items="Model.AvailableEncodings" />
+                    <span asp-validation-for="EncodingId"></span>
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-md-3">
+                    <nop-label asp-for="AdminComment" />
+                </div>
+                <div class="col-md-9">
+                    <nop-textarea asp-for="AdminComment" />
+                    <span asp-validation-for="AdminComment"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="card card-default">
+        <div class="card-body">
+            <div class="form-group row">
+                <div class="col-md-3">
+                    <nop-label asp-for="FileSourceId" />
+                </div>
+                <div class="col-md-9">
+                    <nop-select asp-for="FileSourceId" asp-items="Model.AvailableFileSources" />
+                    <span asp-validation-for="FileSourceId"></span>
+                </div>
+            </div>
+            <div class="form-group row" id="pnFileFolder">
+                <div class="col-md-3">
+                    <nop-label asp-for="FileFolder" />
+                </div>
+                <div class="col-md-9">
+                    <nop-editor asp-for="FileFolder" />
+                    <span asp-validation-for="FileFolder"></span>
+                </div>
+            </div>
+            <div class="form-group row" id="pnFileUrl">
+                <div class="col-md-3">
+                    <nop-label asp-for="FileUrl" />
+                </div>
+                <div class="col-md-9">
+                    <nop-editor asp-for="FileUrl" />
+                    <span asp-validation-for="FileUrl"></span>
+                </div>
+            </div>
+            <div class="form-group row" id="pnFileMaskFTP">
+                <div class="col-md-3">
+                    <nop-label asp-for="FileMaskFTP" />
+                </div>
+                <div class="col-md-9">
+                    <nop-editor asp-for="FileMaskFTP" />
+                    <span asp-validation-for="FileMaskFTP"></span>
+                </div>
+            </div>
+            <div class="form-group row feedftpblock">
+                <div class="col-md-3">
+                    <nop-label asp-for="FTPSettings.Protocol" />
+                </div>
+                <div class="col-md-9">
+                    <nop-select asp-for="FTPSettings.Protocol" asp-items="Model.FTPSettings.ProtocolValues" style="width:100px;" />
+                    <span asp-validation-for="FTPSettings.Protocol"></span>
+                </div>
+            </div>
+            <div class="form-group row feedftpblock">
+                <div class="col-md-3">
+                    <nop-label asp-for="FTPSettings.HostName" />
+                </div>
+                <div class="col-md-9">
+                    <nop-editor asp-for="FTPSettings.HostName" />
+                    <span asp-validation-for="FTPSettings.HostName"></span>
+                </div>
+            </div>
+            <div class="form-group row feedftpblock">
+                <div class="col-md-3">
+                    <nop-label asp-for="FTPSettings.Port" />
+                </div>
+                <div class="col-md-9">
+                    <nop-editor asp-for="FTPSettings.Port" />
+                    <span asp-validation-for="FTPSettings.Port"></span>
+                </div>
+            </div>
+            <div class="form-group row feedftpblock">
+                <div class="col-md-3">
+                    <nop-label asp-for="FTPSettings.UserName" />
+                </div>
+                <div class="col-md-9">
+                    <nop-editor asp-for="FTPSettings.UserName" />
+                    <span asp-validation-for="FTPSettings.UserName"></span>
+                </div>
+            </div>
+            <div class="form-group row feedftpblock">
+                <div class="col-md-3">
+                    <nop-label asp-for="FTPSettings.Password" />
+                </div>
+                <div class="col-md-9">
+                    <nop-editor asp-for="FTPSettings.Password" />
+                    <span asp-validation-for="FTPSettings.Password"></span>
+                </div>
+            </div>
+            <div class="form-group row feedftpblock">
+                <div class="col-md-3">
+                    <nop-label asp-for="FTPSettings.PassiveMode" />
+                </div>
+                <div class="col-md-9">
+                    <nop-editor asp-for="FTPSettings.PassiveMode" />
+                    <span asp-validation-for="FTPSettings.PassiveMode"></span>
+                </div>
+            </div>
+            <div class="form-group row feedftpblock">
+                <div class="col-md-3">&nbsp;</div>
+                <div class="col-md-9">
+                    <input type="submit" name="checkftpconnection" class="k-button" value="@T("Admin.FoxNetSoft.Plugin.Feed.ImportManager.FTPSettings.CheckFTPConenction")" />
+                </div>
+            </div>
+            <div class="form-group row" id="pnUploadZipFile">
+                <div class="col-md-3">&nbsp;</div>
+                <div class="col-md-9">
+                    @T("Admin.FoxNetSoft.Plugin.Feed.ImportManager.UploadZipFile.ZIPFile")
+                    <input type="file" id="importzipfile" name="importzipfile" class="form-control" accept=".zip" />
+                    <ul class="common-list">
+                        <li>
+                            <em>@T("Admin.FoxNetSoft.Plugin.Feed.ImportManager.UploadZipFile.ImportFromZIPTip")</em>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="form-group row" id="pnUploadFile">
+                <div class="col-md-3">&nbsp;</div>
+                <div class="col-md-9">
+                    @T("Admin.FoxNetSoft.Plugin.Feed.ImportManager.UploadFile.File")
+                    <input type="file" id="importfile" name="importfile" class="form-control" accept=".xml,.csv,.xlsx,.tsv" />
+                    <ul class="common-list">
+                        <li>
+                            <em>@T("Admin.FoxNetSoft.Plugin.Feed.ImportManager.UploadFile.ImportFromTip")</em>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="card card-default">
+        <div class="card-body">
+            <div class="form-group row">
+                <div class="col-md-3">
+                    <nop-label asp-for="EnableBackUp" />
+                </div>
+                <div class="col-md-9">
+                    <nop-editor asp-for="EnableBackUp" />
+                    <span asp-validation-for="EnableBackUp"></span>
+                </div>
+            </div>
+            <div class="form-group row" id="pnlbackupfolder">
+                <div class="col-md-3">
+                    <nop-label asp-for="BackupFolder" />
+                </div>
+                <div class="col-md-9">
+                    <nop-editor asp-for="BackupFolder" />
+                    <span asp-validation-for="BackupFolder"></span>
+                    <br />
+                    @T("Admin.FoxNetSoft.Plugin.Feed.ImportManager.ImportTemplate.Fields.BackupFolder.Description")
+                </div>
+            </div>
+            @if (Model.BackupFiles.Count()>0)
+            {
+                <div class="form-group row" id="pnlbackupfilelist">
+                    <div class="col-md-3">
+                        @T("Admin.FoxNetSoft.Plugin.Feed.ImportManager.ImportTemplate.BackupFiles")
+                    </div>
+                    <div class="col-md-9">
+                        @foreach (var fileUrl in Model.BackupFiles)
+                        {
+                            <a href="@fileUrl" target="_blank">@fileUrl</a><br />
+                        }
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+    @if (Model.IsRunning)
+    {
+    <div class="card card-default">
+        <div class="card-body">
+               <div class="form-group row">
+                    <div class="col-md-3">&nbsp;</div>
+                    <div class="col-md-9">
+                        <div style="color:red">@T("Admin.FoxNetSoft.Plugin.Feed.ImportManager.ImportTemplate.Running")</div>
+                    </div>
+                </div>
+        </div>
+    </div>
+    }
+</div>

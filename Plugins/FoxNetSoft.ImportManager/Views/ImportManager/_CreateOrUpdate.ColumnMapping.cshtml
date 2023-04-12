@@ -1,0 +1,131 @@
+﻿@model FoxNetSoft.Plugin.Feed.ImportManager.Models.ImportTemplateModel
+@using FoxNetSoft.Plugin.Feed.ImportManager.Models
+@using Microsoft.AspNetCore.Routing
+@using System.Text.Encodings.Web
+    <div class="cards-group">
+        @if (Model.Id > 0)
+        {
+            <div class="card card-default">
+                <div class="card-body">
+                    @*
+                    <div class="card-body">
+                        <div class="form-group row">
+                            <div class="col-md-3">&nbsp;</div>
+                            <div class="col-md-9">
+                                <button type="button" name="readcolumnnames" class="btn bg-olive" data-toggle="modal" data-target="#readcolumnnames-window">
+                                    <i class="fa fa-upload"></i>
+                                    @T("Admin.FoxNetSoft.Plugin.Feed.ImportManager.ColumnMapping.ReadColumns")
+                                </button>
+                                <br />
+                                @T("Admin.FoxNetSoft.Plugin.Feed.ImportManager.ImportTemplate.ColumnMapping.ReadColumns.Description")
+                            </div>
+                        </div>
+                    </div>
+                    *@
+                    <p>
+                        @T("Admin.FoxNetSoft.Plugin.Feed.ImportManager.ImportTemplate.ColumnMapping.Description")
+                    </p>
+                    @await Html.PartialAsync("Table", new DataTablesModel
+      {
+      Name = "importtemplate-columns-grid",
+      UrlRead = new DataUrl("ImportColumnList", "ImportManager", new RouteValueDictionary { [nameof(Model.ImportTemplateSearchModel.ImportTemplateId)] = Model.ImportTemplateSearchModel.ImportTemplateId }),
+      UrlDelete = new DataUrl("ImportColumnDelete", "ImportManager", null),
+      Length = Model.ImportTemplateSearchModel.PageSize,
+      LengthMenu = Model.ImportTemplateSearchModel.AvailablePageSizes,
+      ColumnCollection = new List<ColumnProperty>
+    {
+      new ColumnProperty(nameof(ImportColumnModel.ColumnSource))
+      {
+          Title = T("Admin.FoxNetSoft.Plugin.Feed.ImportManager.ImportColumn.Fields.ColumnSource").Text
+      },
+      new ColumnProperty(nameof(ImportColumnModel.ColumnDestination))
+      {
+          Title = T("Admin.FoxNetSoft.Plugin.Feed.ImportManager.ImportColumn.Fields.ColumnDestination").Text
+      },
+      new ColumnProperty(nameof(ImportColumnModel.Id))
+      {
+          Title = T("Admin.Common.Delete").Text,
+          Width = "100",
+          Render = new RenderButtonRemove(T("Admin.Common.Delete").Text),
+          ClassName = NopColumnClassDefaults.Button
+      }
+    }
+    })
+                </div>
+            </div>
+
+            <div class="card card-default no-margin">
+                <div class="card-header">
+                    @T("Admin.Common.AddNewRecord")
+                </div>
+                <div class="card-body">
+                    <div class="form-group row">
+                        <div class="col-md-3">
+                            <nop-label asp-for="@Model.AddImportColumn.ColumnSource" />
+                        </div>
+                        <div class="col-md-9">
+                            <nop-editor asp-for="@Model.AddImportColumn.ColumnSource" />
+                            <span asp-validation-for="@Model.AddImportColumn.ColumnSource"></span>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-md-3">
+                            <nop-label asp-for="@Model.AddImportColumn.ColumnDestinationId" />
+                        </div>
+                        <div class="col-md-9">
+                            <nop-select asp-for="@Model.AddImportColumn.ColumnDestinationId" asp-items="@Model.AvailableColumnDestinations" />
+                            <span asp-validation-for="@Model.AddImportColumn.ColumnDestinationId"></span>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-md-9 offset-md-3">
+                            <button type="button" id="addImportColumn" class="btn btn-primary">@T("Admin.Common.AddNewRecord")</button>
+                        </div>
+                    </div>
+                </div>
+                <script>
+                    $(document).ready(function () {
+                        $('#addImportColumn').click(function () {
+                            $('#addImportColumn').attr('disabled', true);
+                            var postData = {
+                                ColumnSource: $("#@Html.IdFor(model => model.AddImportColumn.ColumnSource)").val(),
+                                ColumnDestinationId: $("#@Html.IdFor(model => model.AddImportColumn.ColumnDestinationId)").val(),
+                                ImportTemplateId: @Model.Id
+                            };
+                            addAntiForgeryToken(postData);
+
+                            $.ajax({
+                                cache: false,
+                                type: "POST",
+                                url: "@Html.Raw(Url.Action("ImportColumnAdd", "ImportManager"))",
+                                data: postData,
+                                success: function (data, textStatus, jqXHR) {
+                                    if (data.Result) {
+                                        //reload grid
+                                        updateTable('#importtemplate-columns-grid');
+
+                                        //clear input value
+                                        $("#@Html.IdFor(model => model.AddImportColumn.ColumnSource)").val('');
+                                    } else {
+                                        //display errors if returned
+                                        display_nop_error(data);
+                                    }
+                                },
+                                complete: function (jqXHR, textStatus) {
+                                    $('#addImportColumn').attr('disabled', false);
+                                }
+                            });
+                        });
+                    });
+                </script>
+            </div>
+    }
+    else
+    {
+        <div class="card card-default">
+            <div class="card-body">
+                @T("Admin.FoxNetSoft.Plugin.Feed.ImportManager.ImportColumn.SaveBeforeEdit")
+            </div>
+        </div>
+    }
+</div>

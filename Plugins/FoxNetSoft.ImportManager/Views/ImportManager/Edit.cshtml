@@ -1,0 +1,118 @@
+@model FoxNetSoft.Plugin.Feed.ImportManager.Models.ImportTemplateModel
+@using Nop.Web.Framework.UI
+@{
+    Layout = "_AdminLayout";
+    //page title
+    ViewBag.PageTitle = @T("Admin.FoxNetSoft.Plugin.Feed.ImportManager.ImportTemplate.Edit").Text;
+
+    NopHtml.SetActiveMenuItemSystemName("FoxNetSoft.ImportManager.List");
+}
+<form asp-controller="ImportManager" asp-action="Edit" method="post" id="importmanager-form" enctype="multipart/form-data">
+    <div class="content-header clearfix">
+        <h1 class="float-left">
+            @T("Admin.FoxNetSoft.Plugin.Feed.ImportManager.ImportTemplate.Edit") - @Model.Name
+            <small>
+                <i class="fa fa-arrow-circle-left"></i>
+                <a asp-action="List">@T("Admin.FoxNetSoft.Plugin.Feed.ImportManager.ImportTemplate.BackToList")</a>
+            </small>
+        </h1>
+        <div class="float-right">
+            @if (!Model.IsRunning)
+            {
+                <button type="submit" name="starttasktemplate" class="btn bg-purple">
+                    @T("Admin.FoxNetSoft.Plugin.Feed.ImportManager.ImportTemplate.StartTask")
+                </button>
+                <button type="submit" name="starttaskfaketemplate" class="btn bg-purple">
+                    @T("Admin.FoxNetSoft.Plugin.Feed.ImportManager.ImportTemplate.StartTaskFake")
+                </button>
+            }
+            <button type="button" name="copyfeedtemplate" class="btn bg-olive" data-toggle="modal" data-target="#copyfeedtemplate-window">
+                <i class="fa fa-clone"></i>
+                @T("Admin.FoxNetSoft.Plugin.Feed.ImportManager.Copy")
+            </button>
+            <button type="submit" name="save" class="btn bg-blue">
+                <i class="fa fa-floppy-o"></i>
+                @T("Admin.Common.Save")
+            </button>
+            <button type="submit" name="save-continue" class="btn bg-blue">
+                <i class="fa fa-floppy-o"></i>
+                @T("Admin.Common.SaveContinue")
+            </button>
+            <span id="importmanager-delete" class="btn bg-red">
+                <i class="fa fa-trash-o"></i>
+                @T("Admin.Common.Delete")
+            </span>
+        </div>
+    </div>
+    @await Html.PartialAsync("~/Plugins/FoxNetSoft.ImportManager/Views/ImportManager/_CreateOrUpdate.cshtml", Model)
+</form>
+<nop-delete-confirmation asp-model-id="@Model.Id" asp-button-id="importmanager-delete" />
+
+
+@*import columns*@
+<div id="readcolumnnames-window" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="readcolumnnames-window-title">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="importcsv-window-title">@T("Admin.Common.ImportFromCsv")</h4>
+            </div>
+            <form asp-controller="ImportManager" asp-action="ReadColumnNames" method="post" id="importmanager-upload-form" enctype="multipart/form-data" asp-route-id="@Model.Id">
+                <div class="form-horizontal">
+                    <div class="modal-body">
+                        @Html.AntiForgeryToken()
+                        <div class="form-group row">
+                            <div class="col-md-2">
+                                <div class="label-wrapper">
+                                    <label class="control-label">
+                                        @T("Admin.Common.CsvFile")
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-md-10">
+                                <input type="file" id="importcsvfile" name="importcsvfile" class="form-control" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-primary">
+                            @T("Admin.Common.ImportFromCsv")
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@*copy feed template form*@
+<div id="copyfeedtemplate-window" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="copyfeedtemplate-window-title">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="copyfeedtemplate-window-title">@T("Admin.FoxNetSoft.Plugin.Feed.ImportManager.Copy")</h4>
+            </div>
+            <form asp-controller="ImportManager" asp-action="CopyFeed" method="post">
+                <div class="form-horizontal">
+                    <div class="modal-body">
+                        <input asp-for="CopyImportTemplate.Id" type="hidden" />
+                        <div class="form-group row">
+                            <div class="col-md-4">
+                                <nop-label asp-for="CopyImportTemplate.Name" />
+                            </div>
+                            <div class="col-md-8">
+                                <nop-editor asp-for="CopyImportTemplate.Name" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-primary">
+                            @T("Admin.FoxNetSoft.Plugin.Feed.ImportManager.Copy")
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
